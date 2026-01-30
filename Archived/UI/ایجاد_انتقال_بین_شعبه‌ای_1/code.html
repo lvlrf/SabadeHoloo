@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>درخت هلو - ایجاد انتقال</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Vazirmatn:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec5b",
+              "primary-dark": "#0fb847",
+              "background-light": "#f8fcf9",
+              "background-dark": "#102216",
+              "surface": "#ffffff",
+              "text-main": "#0d1b12",
+              "text-secondary": "#4c9a66",
+              "border": "#e7f3eb",
+              "input-border": "#cfe7d7",
+            },
+            fontFamily: {
+              "display": ["Vazirmatn", "Inter", "sans-serif"],
+              "body": ["Vazirmatn", "Inter", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Vazirmatn', 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for table if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main min-h-screen flex overflow-hidden">
+<!-- Sidebar (Right) -->
+<aside class="hidden lg:flex flex-col w-72 h-screen border-l border-border bg-surface shrink-0 transition-all duration-300">
+<div class="flex items-center gap-3 p-6 border-b border-border">
+<div class="bg-center bg-no-repeat bg-cover rounded-xl size-10 shrink-0 shadow-sm" data-alt="Abstract green geometric logo representing a peach tree" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0zjfZ4SelUpp51AlvuUkxSf_3HaZ5L9_iYvpvnmETUocscZeHk0ywVCI6O5nxYq1zMrX-KdcKOcBLEoBDi6qTOVX5VBwMx-CK0R-ok32ZcYj2OHZY5dwv8kmXPo8wFpud0ZHfYJMe8c5U6oSU6kRkApRHk1EuWBIbgrtUw7BzylkWMmbPltUVhf_vSTCQ7hImgZGJXX_v7bTnT3eU0SY_AG7ceI4-AGCymPO3wjdI3y7fPooSBfE3c457PHYSpR4Y7mMDfAG-rw");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-lg font-bold leading-tight tracking-tight">درخت هلو</h1>
+<p class="text-text-secondary text-xs font-normal">برنامه مدیریت شعب</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-border transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main">grid_view</span>
+<span class="text-text-main text-sm font-medium">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-border transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main">inventory_2</span>
+<span class="text-text-main text-sm font-medium">موجودی کالا</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 border border-primary/20" href="#">
+<span class="material-symbols-outlined text-primary-dark font-bold">swap_horiz</span>
+<span class="text-text-main text-sm font-bold">انتقال‌ها</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-border transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main">bar_chart</span>
+<span class="text-text-main text-sm font-medium">گزارشات</span>
+</a>
+<div class="my-2 border-t border-border"></div>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-border transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main">settings</span>
+<span class="text-text-main text-sm font-medium">تنظیمات پایه</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-border transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main">group</span>
+<span class="text-text-main text-sm font-medium">مدیریت کاربران</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border">
+<div class="flex items-center gap-3 p-2 rounded-lg bg-background-light border border-border">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center text-primary-dark font-bold text-xs">A</div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-sm font-medium truncate">ادمین سیستم</p>
+<p class="text-xs text-text-secondary truncate">admin@holoo.ir</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden relative">
+<!-- Top Navigation Bar -->
+<header class="h-16 border-b border-border bg-surface flex items-center justify-between px-6 shrink-0 z-20">
+<!-- Left Side (RTL Start) -->
+<div class="flex items-center gap-4">
+<button class="lg:hidden p-2 text-text-secondary hover:bg-border rounded-lg">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Breadcrumbs -->
+<nav class="hidden sm:flex items-center gap-2 text-sm">
+<span class="text-text-secondary">انتقال‌ها</span>
+<span class="material-symbols-outlined text-text-secondary text-[16px]">chevron_left</span>
+<span class="text-text-main font-medium">ایجاد انتقال جدید</span>
+</nav>
+</div>
+<!-- Right Side (RTL End) -->
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center h-10 px-4 bg-primary hover:bg-primary-dark transition-colors text-text-main text-sm font-bold rounded-lg gap-2 shadow-sm shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+<span class="hidden sm:inline">پیش‌نمایش (Apply)</span>
+</button>
+<div class="h-6 w-px bg-border mx-1"></div>
+<button class="flex items-center justify-center size-10 rounded-lg bg-background-light hover:bg-border text-text-main transition-colors border border-transparent hover:border-input-border" title="راهنما">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-background-light hover:bg-border text-text-main transition-colors border border-transparent hover:border-input-border" title="تنظیمات ظاهر">
+<span class="material-symbols-outlined">palette</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light p-4 sm:p-6 lg:p-8 custom-scrollbar">
+<div class="max-w-5xl mx-auto flex flex-col gap-6 pb-20">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-2xl sm:text-3xl font-bold text-text-main">ایجاد انتقال بین شعبه‌ای</h2>
+<p class="text-text-secondary text-sm">فرم درخواست جابجایی کالا بین انبارها و شعب سازمان</p>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-secondary bg-white px-3 py-1.5 rounded-full border border-border shadow-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>۱۴۰۳/۰۸/۲۴</span>
+</div>
+</div>
+<!-- Main Form Card -->
+<div class="bg-surface rounded-xl border border-border shadow-sm overflow-hidden">
+<div class="border-b border-border bg-gray-50/50 px-6 py-4">
+<h3 class="font-bold text-text-main flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark">local_shipping</span>
+                            اطلاعات مبدا و مقصد
+                        </h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Source Branch -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-main">شعبه مبدا <span class="text-red-500">*</span></label>
+<div class="relative">
+<select class="w-full appearance-none h-11 px-3 bg-white border border-input-border rounded-lg text-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow cursor-pointer">
+<option disabled="" selected="" value="">انتخاب کنید...</option>
+<option value="1">انبار مرکزی تهران</option>
+<option value="2">شعبه شیراز</option>
+<option value="3">شعبه اصفهان</option>
+</select>
+<span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Destination Branch -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-main">شعبه مقصد <span class="text-red-500">*</span></label>
+<div class="relative">
+<select class="w-full appearance-none h-11 px-3 bg-white border border-input-border rounded-lg text-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow cursor-pointer">
+<option disabled="" selected="" value="">انتخاب کنید...</option>
+<option value="1">انبار مرکزی تهران</option>
+<option value="2">شعبه شیراز</option>
+<option value="3">شعبه اصفهان</option>
+</select>
+<span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Transfer Type -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-main">نوع انتقال</label>
+<div class="relative">
+<select class="w-full appearance-none h-11 px-3 bg-white border border-input-border rounded-lg text-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow cursor-pointer">
+<option value="standard">عادی</option>
+<option value="urgent">فوری</option>
+<option value="return">مرجوعی</option>
+</select>
+<span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Reference Number -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-main">شماره ارجاع</label>
+<div class="relative">
+<input class="w-full h-11 px-3 bg-gray-50 border border-input-border rounded-lg text-sm text-text-secondary font-mono text-left focus:outline-none" readonly="" type="text" value="TR-1403-892"/>
+<span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary material-symbols-outlined text-[18px]">lock</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Items Table Section -->
+<div class="bg-surface rounded-xl border border-border shadow-sm flex flex-col overflow-hidden">
+<div class="border-b border-border bg-gray-50/50 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+<h3 class="font-bold text-text-main flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark">inventory</span>
+                            اقلام انتقال
+                        </h3>
+<button class="text-sm text-primary-dark font-bold hover:bg-primary/10 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                            افزودن سطر جدید
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-right">
+<thead class="bg-gray-50 text-text-secondary font-medium border-b border-border">
+<tr>
+<th class="px-6 py-3 w-12 text-center">#</th>
+<th class="px-6 py-3 min-w-[200px]">نام کالا / کد محصول</th>
+<th class="px-6 py-3 w-32">واحد</th>
+<th class="px-6 py-3 w-40">موجودی مبدا</th>
+<th class="px-6 py-3 w-40">تعداد انتقال</th>
+<th class="px-6 py-3 w-20"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border">
+<!-- Row 1 -->
+<tr class="group hover:bg-background-light transition-colors">
+<td class="px-6 py-3 text-center text-text-secondary">۱</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-lg bg-gray-100 border border-border bg-center bg-cover" data-alt="Small thumbnail of a peach fruit product" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClYjgiEsXig8gKWtC0RfQFwhDL4kj0TZlpznS78Na26FqfhYElRyry6BTJMg-Ne6ATcGGroUebOFpEw2dtM8Nbf19Z89kLSrw3BrSz3n-AR_ZTppIU7TAUHd-R2IfBdOIyvKJb_Xgliu5Q28M0OFvTrUYeBrGIH8JDITDOad56mev3XWGgboYi6MQ7y3YRtS-WZRAchrxI3UQAHgVbLTiHxirFMMNAvnYGdKLZbrDciZOyi-WXZDyUEngtpT6Jht3eUj46i2qH8Q");'></div>
+<div>
+<p class="font-medium text-text-main">کمپوت هلو ۵۰۰ گرمی</p>
+<p class="text-xs text-text-secondary font-mono">CODE-8821</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-3 text-text-main">قوطی</td>
+<td class="px-6 py-3">
+<span class="inline-flex items-center px-2 py-1 rounded bg-green-50 text-green-700 text-xs font-medium">
+                                            ۱,۲۰۰ موجود
+                                        </span>
+</td>
+<td class="px-6 py-3">
+<input class="w-24 h-9 px-2 text-center border border-input-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" type="number" value="100"/>
+</td>
+<td class="px-6 py-3 text-left">
+<button class="text-gray-400 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-red-50">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-background-light transition-colors">
+<td class="px-6 py-3 text-center text-text-secondary">۲</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-lg bg-gray-100 border border-border bg-center bg-cover" data-alt="Small thumbnail of a juice box product" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWAOlradeXbRoJajuGFGci_kZ0zhmWXShwmFMywZ0FElg1cVTkjLxITQGgc_Ku9ZTelFGoBMX3TQXLV3ZmJruNcRSU1kjzbd0rtLxHU21C-tXiokHIC3TXHnFX_2I4RbQIjlIWh_OXOPlEwOBEUDnUuT4evDENWhEwwYc66k_65sS5DaJL9XRYO0y4w6SQpZDylT2cSQ6jUYl4has1KOjfEbMNZoZLh_GeSi2OyI3FM0wc2kYEKlpUdVTj-dPjGIzLLh_7n6PSag");'></div>
+<div>
+<p class="font-medium text-text-main">آبمیوه طبیعی ۱ لیتر</p>
+<p class="text-xs text-text-secondary font-mono">CODE-3310</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-3 text-text-main">بسته</td>
+<td class="px-6 py-3">
+<span class="inline-flex items-center px-2 py-1 rounded bg-yellow-50 text-yellow-700 text-xs font-medium">
+                                            ۴۵ موجود
+                                        </span>
+</td>
+<td class="px-6 py-3">
+<input class="w-24 h-9 px-2 text-center border border-input-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" type="number" value="20"/>
+</td>
+<td class="px-6 py-3 text-left">
+<button class="text-gray-400 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-red-50">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Empty Row / Add New -->
+<tr class="bg-gray-50/30 border-t-2 border-dashed border-border">
+<td class="px-6 py-3 text-center text-text-secondary">۳</td>
+<td class="px-6 py-3">
+<div class="relative">
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary material-symbols-outlined text-[18px]">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 placeholder:text-gray-400 text-sm h-9 px-8" placeholder="جستجوی نام کالا یا اسکن بارکد..." type="text"/>
+</div>
+</td>
+<td class="px-6 py-3 text-gray-400 text-xs">-</td>
+<td class="px-6 py-3 text-gray-400 text-xs">-</td>
+<td class="px-6 py-3">
+<input class="w-24 h-9 px-2 text-center bg-gray-100 border border-transparent rounded-lg text-gray-400 cursor-not-allowed" disabled="" placeholder="0" type="number"/>
+</td>
+<td class="px-6 py-3"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Summary -->
+<div class="bg-gray-50 px-6 py-4 flex justify-between items-center border-t border-border">
+<span class="text-sm text-text-secondary">مجموع اقلام: <b class="text-text-main">۲ مورد</b></span>
+<span class="text-sm text-text-secondary">کل تعداد: <b class="text-text-main">۱۲۰ عدد</b></span>
+</div>
+</div>
+<!-- Notes Section -->
+<div class="bg-surface rounded-xl border border-border shadow-sm p-6 flex flex-col gap-3">
+<label class="font-bold text-text-main text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-dark">description</span>
+                        توضیحات تکمیلی
+                    </label>
+<textarea class="w-full min-h-[100px] p-4 bg-background-light border border-input-border rounded-lg text-sm text-text-main placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow resize-y" placeholder="یادداشت‌های مربوط به این انتقال را اینجا بنویسید (مثلاً: نیاز به بررسی کیفیت قبل از ارسال)..."></textarea>
+</div>
+<!-- Spacer for sticky footer -->
+<div class="h-10"></div>
+</div>
+</main>
+<!-- Sticky Footer Action Bar -->
+<div class="absolute bottom-0 left-0 w-full bg-surface border-t border-border p-4 z-10 flex items-center justify-between sm:justify-end gap-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<button class="px-6 h-11 rounded-lg border border-border text-text-secondary font-bold text-sm hover:bg-gray-50 hover:text-text-main transition-colors min-w-[100px]">
+                انصراف
+            </button>
+<button class="px-8 h-11 rounded-lg bg-primary hover:bg-primary-dark text-text-main font-bold text-sm shadow-md shadow-primary/30 transition-all transform active:scale-95 flex items-center gap-2 min-w-[160px] justify-center">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                پیش‌نمایش و ثبت
+            </button>
+</div>
+</div>
+</body></html>

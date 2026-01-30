@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee7c2b",
+            "background-light": "#f8f7f6",
+            "background-dark": "#221810",
+            "surface-dark": "#2d2118",
+            "border-dark": "#463528",
+          },
+          fontFamily: {
+            "display": ["Vazirmatn", "Inter", "ui-sans-serif", "system-ui"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="flex min-h-screen relative overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-[#1e150f] dark:bg-[#18110b] border-l border-slate-200 dark:border-white/5 flex flex-col fixed inset-y-0 right-0 z-50 transition-all duration-300">
+<!-- Branding -->
+<div class="p-6 flex items-center gap-3 mb-2">
+<div class="size-12 rounded-2xl bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center text-white shadow-lg shadow-primary/20 shrink-0">
+<span class="material-symbols-outlined text-3xl">park</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white font-black text-xl leading-tight tracking-tight">درخت هلو</h1>
+<p class="text-white/40 text-xs font-medium">برنامه مدیریت شعب</p>
+</div>
+</div>
+<!-- Menu Items -->
+<nav class="flex-1 px-4 space-y-1 py-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-bold text-sm">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">storefront</span>
+<span class="font-bold text-sm">مدیریت شعب</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-gradient-to-l from-primary/20 to-transparent text-primary border-r-2 border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-primary fill-1">payments</span>
+<span class="font-black text-sm">امور مالی</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">bar_chart</span>
+<span class="font-bold text-sm">گزارش‌ها</span>
+</a>
+<div class="pt-4 mt-4 border-t border-white/5">
+<p class="px-4 text-xs font-bold text-slate-500 mb-2">سیستم</p>
+<a class="flex items-center gap-3 px-4 py-3.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="font-bold text-sm">تنظیمات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">support_agent</span>
+<span class="font-bold text-sm">پشتیبانی</span>
+</a>
+</div>
+</nav>
+<!-- User Profile Footer -->
+<div class="p-4 border-t border-white/5 bg-black/20">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+<div class="size-10 rounded-full bg-cover bg-center ring-2 ring-white/10 group-hover:ring-primary/50 transition-all" data-alt="تصویر پروفایل کاربر" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiMLeZvq81r-BDFzYZvquPe85hkN0V4_JKfEJZkA-mwMfyyM9diC_fyoAZ20dIJpaAC7IxfQXFhZ_n1qEagjB6u6Wq_ptqcE_px18crAJa8DYtAf6HJ8FWPvCoql2HlJ0hVMwlCMtxkYBMYHxMErJkE5wsmeyDR-XiMRxuNxgqyjWpKi9PWQO-JfVuRCZH9NDD4OZuHexTrT7GowWjoHLhdELcJSCiGGb_QN9GFQloYnlNXuPKdmE8BscvPsqOjlMB2fYW83qXAA')"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-white text-sm font-bold truncate">علی محمدی</p>
+<p class="text-white/40 text-xs truncate">مدیر شعبه مرکز</p>
+</div>
+<span class="material-symbols-outlined text-white/40 group-hover:text-white transition-colors text-lg">logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 mr-72 p-6 lg:p-10 max-w-[1600px] mx-auto w-full">
+<!-- Top Header -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+<div>
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 mb-2">
+<a class="hover:text-primary transition-colors" href="#">خانه</a>
+<span class="material-symbols-outlined text-[10px] opacity-50 rotate-180">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">امور مالی</a>
+<span class="material-symbols-outlined text-[10px] opacity-50 rotate-180">chevron_right</span>
+<span class="text-primary">ثبت تراکنش</span>
+</nav>
+<h2 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight">ثبت پرداخت کارت به کارت</h2>
+<p class="text-slate-500 dark:text-[#c9a992] text-sm mt-1">اطلاعات پرداخت را وارد کنید و رسید را بارگذاری نمایید.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="size-11 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary dark:hover:border-primary transition-all shadow-sm relative group">
+<span class="absolute top-2.5 right-3 size-2 bg-red-500 rounded-full ring-2 ring-white dark:ring-surface-dark animate-pulse"></span>
+<span class="material-symbols-outlined group-hover:animate-swing">notifications</span>
+</button>
+<button class="hidden md:flex h-11 px-4 items-center justify-center gap-2 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark text-slate-500 dark:text-slate-400 font-bold text-sm hover:border-primary dark:hover:border-primary hover:text-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">help</span>
+<span>راهنما</span>
+</button>
+</div>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- Main Form Column -->
+<div class="xl:col-span-8 space-y-6">
+<!-- Timeline Status -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-2xl p-6 lg:p-8 shadow-sm">
+<div class="flex items-center justify-between w-full max-w-2xl mx-auto relative">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 right-0 left-0 h-1 bg-slate-100 dark:bg-white/5 -z-0 rounded-full"></div>
+<!-- Progress Line -->
+<div class="absolute top-1/2 right-0 w-1/6 h-1 bg-primary -z-0 rounded-full"></div>
+<!-- Step 1: Active -->
+<div class="relative z-10 flex flex-col items-center gap-3 group cursor-default">
+<div class="size-12 rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30 ring-4 ring-white dark:ring-surface-dark transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-2xl">edit_square</span>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">ثبت اطلاعات</p>
+</div>
+<!-- Step 2: Pending -->
+<div class="relative z-10 flex flex-col items-center gap-3 opacity-60">
+<div class="size-10 rounded-2xl bg-slate-100 dark:bg-white/10 text-slate-400 dark:text-slate-500 flex items-center justify-center ring-4 ring-white dark:ring-surface-dark border-2 border-transparent">
+<span class="material-symbols-outlined text-xl">hourglass_top</span>
+</div>
+<p class="text-xs font-bold text-slate-400 dark:text-slate-500">بررسی مالی</p>
+</div>
+<!-- Step 3: Approved -->
+<div class="relative z-10 flex flex-col items-center gap-3 opacity-60">
+<div class="size-10 rounded-2xl bg-slate-100 dark:bg-white/10 text-slate-400 dark:text-slate-500 flex items-center justify-center ring-4 ring-white dark:ring-surface-dark border-2 border-transparent">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+<p class="text-xs font-bold text-slate-400 dark:text-slate-500">تایید نهایی</p>
+</div>
+</div>
+</div>
+<!-- Payment Form -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-2xl p-6 lg:p-8 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
+<!-- Amount Input -->
+<div class="md:col-span-2 group">
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">
+<span class="material-symbols-outlined text-primary text-lg">payments</span>
+                     مبلغ تراکنش (تومان)
+                   </label>
+<div class="relative transition-all duration-300 transform group-focus-within:-translate-y-1">
+<input class="peer w-full h-14 bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-border-dark rounded-xl px-4 pl-16 text-left font-mono text-xl font-bold focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400/70" placeholder="مثلا: ۱۰,۰۰۰,۰۰۰" type="text" value="15,000,000"/>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none border-r border-slate-200 dark:border-border-dark pr-3 py-2 my-2 mr-2">
+<span class="text-slate-400 text-xs font-bold tracking-wider">TOMAN</span>
+</div>
+</div>
+<p class="text-primary text-xs font-medium mt-2 flex items-center gap-1 animate-pulse">
+<span class="material-symbols-outlined text-sm">campaign</span>
+                     پانزده میلیون تومان
+                   </p>
+</div>
+<!-- Date Input -->
+<div class="group">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">تاریخ واریز</label>
+<div class="relative">
+<input class="w-full h-12 bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-border-dark rounded-xl px-4 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400 text-left ltr font-mono" placeholder="1402/10/01" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-400 pointer-events-none group-focus-within:text-primary transition-colors">calendar_month</span>
+</div>
+</div>
+<!-- Time Input -->
+<div class="group">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">زمان واریز</label>
+<div class="relative">
+<input class="w-full h-12 bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-border-dark rounded-xl px-4 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400 text-left ltr font-mono" placeholder="12:30" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-400 pointer-events-none group-focus-within:text-primary transition-colors">schedule</span>
+</div>
+</div>
+<!-- Source Card -->
+<div class="group">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">شماره کارت مبدا</label>
+<div class="relative">
+<input class="w-full h-12 bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-border-dark rounded-xl px-4 text-left font-mono text-lg tracking-wider focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400" dir="ltr" placeholder="xxxx-xxxx-xxxx-xxxx" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-400 pointer-events-none group-focus-within:text-primary transition-colors">credit_card</span>
+</div>
+</div>
+<!-- Destination Card -->
+<div class="group">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">حساب مقصد</label>
+<div class="relative">
+<select class="w-full h-12 bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-border-dark rounded-xl px-4 pl-10 appearance-none focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all dark:text-white cursor-pointer text-sm font-medium">
+<option>بانک ملت - شعبه مرکزی (....5432)</option>
+<option>بانک سامان - تنخواه (....8765)</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Notes Textarea -->
+<div class="md:col-span-2 group">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">توضیحات تکمیلی</label>
+<textarea class="w-full min-h-[100px] bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-border-dark rounded-xl p-4 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400 resize-none" placeholder="توضیحات مربوط به این پرداخت را اینجا بنویسید..."></textarea>
+</div>
+<!-- File Upload Zone -->
+<div class="md:col-span-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">تصویر رسید پرداخت</label>
+<div class="relative overflow-hidden border-2 border-dashed border-slate-300 dark:border-border-dark hover:border-primary dark:hover:border-primary rounded-2xl p-8 flex flex-col items-center justify-center transition-all cursor-pointer group bg-slate-50 dark:bg-background-dark/30 hover:bg-primary/5">
+<div class="size-14 rounded-full bg-white dark:bg-white/5 shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all flex items-center justify-center mb-4 z-10 relative">
+<span class="material-symbols-outlined text-3xl text-primary">cloud_upload</span>
+</div>
+<div class="text-center z-10 relative">
+<p class="text-sm font-bold text-slate-700 dark:text-slate-200 group-hover:text-primary transition-colors">برای بارگذاری کلیک کنید یا فایل را اینجا رها کنید</p>
+<p class="text-xs text-slate-400 mt-2">فرمت‌های مجاز: PNG, JPG (حداکثر ۵ مگابایت)</p>
+</div>
+<!-- Decoration -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col-reverse md:flex-row items-center gap-4 mt-8 pt-6 border-t border-slate-100 dark:border-white/5">
+<button class="w-full md:w-auto px-8 h-12 bg-transparent hover:bg-slate-100 dark:hover:bg-white/5 text-slate-500 dark:text-slate-400 font-bold rounded-xl transition-all border border-transparent hover:border-slate-200 dark:hover:border-white/10 flex items-center justify-center">
+                   انصراف و بازگشت
+                </button>
+<div class="flex-1"></div>
+<button class="w-full md:w-auto px-10 h-12 bg-primary hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">send</span>
+                   ثبت نهایی پرداخت
+                </button>
+</div>
+</div>
+</div>
+<!-- Sidebar Info Column -->
+<div class="xl:col-span-4 space-y-6">
+<!-- Info Card -->
+<div class="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-2xl p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-8xl text-primary rotate-12">info</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<div class="size-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">lightbulb</span>
+</div>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white">نکات مهم</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span class="leading-relaxed opacity-90">تصویر رسید باید کاملاً خوانا باشد و کد پیگیری در آن مشخص باشد.</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span class="leading-relaxed opacity-90">در صورت مغایرت مبلغ و رسید، تراکنش به صورت خودکار رد خواهد شد.</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span class="leading-relaxed opacity-90">زمان تایید توسط واحد مالی بین ۱ تا ۲۴ ساعت کاری است.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Recent Transactions List -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-2xl p-6 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-slate-900 dark:text-white">تراکنش‌های اخیر</h3>
+<a class="text-xs font-bold text-primary hover:text-orange-400 transition-colors flex items-center gap-1" href="#">
+                      مشاهده همه
+                      <span class="material-symbols-outlined text-sm">arrow_back</span>
+</a>
+</div>
+<div class="space-y-0 relative">
+<!-- Vertical connector line -->
+<div class="absolute right-5 top-4 bottom-4 w-0.5 bg-slate-100 dark:bg-white/5 -z-0"></div>
+<!-- Item 1 -->
+<div class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative z-10 group">
+<div class="size-10 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform bg-white dark:bg-surface-dark">
+<span class="material-symbols-outlined text-lg">done_all</span>
+</div>
+<div class="flex-1 pt-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-slate-900 dark:text-white">۵,۰۰۰,۰۰۰ تومان</p>
+<span class="text-[10px] font-bold text-emerald-600 bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-400 px-2 py-0.5 rounded-full">تایید شد</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">۱۴۰۲/۰۹/۱۰ - ۱۴:۲۰</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative z-10 group">
+<div class="size-10 rounded-full bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform bg-white dark:bg-surface-dark">
+<span class="material-symbols-outlined text-lg">close</span>
+</div>
+<div class="flex-1 pt-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-slate-900 dark:text-white">۱,۲۰۰,۰۰۰ تومان</p>
+<span class="text-[10px] font-bold text-red-600 bg-red-100 dark:bg-red-500/10 dark:text-red-400 px-2 py-0.5 rounded-full">رد شده</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">۱۴۰۲/۰۹/۰۸ - ۱۰:۱۵</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative z-10 group">
+<div class="size-10 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform bg-white dark:bg-surface-dark">
+<span class="material-symbols-outlined text-lg">hourglass_bottom</span>
+</div>
+<div class="flex-1 pt-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-slate-900 dark:text-white">۸۵۰,۰۰۰ تومان</p>
+<span class="text-[10px] font-bold text-amber-600 bg-amber-100 dark:bg-amber-500/10 dark:text-amber-400 px-2 py-0.5 rounded-full">در انتظار</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">۱۴۰۲/۰۹/۰۵ - ۱۸:۳۰</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

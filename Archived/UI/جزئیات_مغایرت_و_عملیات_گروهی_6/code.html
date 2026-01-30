@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>درخت هلو - جزئیات مغایرت و عملیات گروهی (جدید)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "primary-dark": "#0eb545",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e22",
+                        "border-light": "#e7f3eb",
+                        "border-dark": "#2a4234",
+                    },
+                    fontFamily: {
+                        "display": ['"Noto Sans Arabic"', "Inter", "sans-serif"],
+                        "body": ['"Noto Sans Arabic"', "Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white h-screen flex overflow-hidden">
+<aside class="w-72 bg-surface-light dark:bg-surface-dark border-l border-border-light dark:border-border-dark flex flex-col h-full shrink-0 transition-all duration-300 z-20 hidden lg:flex">
+<div class="p-6 flex items-center gap-4">
+<div class="relative size-12 shrink-0 rounded-xl bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center overflow-hidden border border-green-200">
+<span class="material-symbols-outlined text-green-600 text-3xl">spa</span>
+<div class="absolute inset-0 bg-green-500/10" data-alt="Peach tree abstract logo background"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">درخت هلو</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">مدیریت شعب یکپارچه</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 space-y-2 py-4 no-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary-dark dark:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined fill">sync_alt</span>
+<span class="text-sm font-bold">عملیات و مغایرت</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">bar_chart</span>
+<span class="text-sm font-medium">گزارش‌ها</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">store</span>
+<span class="text-sm font-medium">شعب</span>
+</a>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-4 text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">سیستم</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">تنظیمات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">support_agent</span>
+<span class="text-sm font-medium">پشتیبانی</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<button class="w-full flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-right">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center border-2 border-white dark:border-slate-600 shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_zMuuyTUe3V41ZlsmYztzfQEKYP3qETw-NYhNlMx9ottZKLG9VAbyjuMsJKoZdKYw7m0er3rRBxMuQ6a3W3pVzCXcu-4owbYB9dLVz7Oh8dZgjt13HN5M-MepS7vykHQO64yhqiJLAmxZ3yamCaemx8NjW8i8ncp7F9mxk--hx0Q4caKYTBMOJeJKVOC7DkBoqxmtXOvxffVmLYoBSkvr-6asc5g3MlEFZpKv2m2moOcmkxnvLsBrpFo20luXbPta9rCanCEeBw');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">امیرحسین رضایی</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">مدیر سیستم</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-xl">logout</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<header class="h-16 shrink-0 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 z-10">
+<div class="flex items-center gap-4">
+<button class="lg:hidden p-2 -mr-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">خانه</a>
+<span class="material-symbols-outlined text-xs rtl:rotate-180">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">عملیات</a>
+<span class="material-symbols-outlined text-xs rtl:rotate-180">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-semibold">مغایرت‌ها</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="text-xs font-medium hidden sm:block">راهنما</span>
+</button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark hover:bg-slate-50 dark:hover:bg-white/5 transition-colors bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-500 text-sm">palette</span>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-200">ظاهر</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">expand_more</span>
+</button>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white dark:border-slate-800"></span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 md:p-8 pb-32">
+<div class="max-w-[1600px] mx-auto space-y-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-1">جزئیات مغایرت و عملیات گروهی (جدید)</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">شناسه همگام‌سازی: <span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-300">SYNC-2023-10-24-A8</span></p>
+</div>
+<div class="flex items-center gap-3">
+<button class="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">history</span>
+                            تاریخچه
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-slate-900 bg-primary hover:bg-primary-dark rounded-lg transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">refresh</span>
+                            بروزرسانی وضعیت
+                        </button>
+</div>
+</div>
+<div class="border-b border-border-light dark:border-border-dark">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8 space-x-reverse">
+<a class="border-primary text-primary whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+                            کالاها
+                            <span class="bg-primary/10 text-primary-dark px-2 py-0.5 rounded-full text-xs">12</span>
+</a>
+<a class="border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">category</span>
+                            گروه‌ها
+                        </a>
+<a class="border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">attach_money</span>
+                            قیمت‌ها
+                        </a>
+</nav>
+</div>
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="flex flex-1 w-full md:w-auto gap-4">
+<div class="relative flex-1 max-w-md">
+<span class="absolute inset-y-0 right-3 flex items-center text-slate-400 material-symbols-outlined pointer-events-none">search</span>
+<input class="w-full h-11 pr-10 pl-4 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400 text-sm" placeholder="جستجو در نام کالا یا کد..." type="text"/>
+</div>
+<div class="relative min-w-[160px] hidden sm:block">
+<select class="w-full h-11 pr-10 pl-8 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none appearance-none cursor-pointer text-sm">
+<option>نمایش همه شعب</option>
+<option>شعب دارای مغایرت</option>
+<option>شعب موفق</option>
+</select>
+<span class="absolute inset-y-0 right-3 flex items-center text-slate-400 material-symbols-outlined pointer-events-none">filter_alt</span>
+<span class="absolute inset-y-0 left-2 flex items-center text-slate-400 material-symbols-outlined pointer-events-none text-sm">expand_more</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm flex flex-col h-[600px]">
+<div class="overflow-auto custom-scrollbar flex-1 relative rounded-t-xl">
+<table class="w-full border-collapse text-sm text-right min-w-[1200px]">
+<thead class="bg-slate-50 dark:bg-surface-dark text-slate-600 dark:text-slate-300 font-semibold sticky top-0 z-30 shadow-sm">
+<tr>
+<th class="sticky right-0 z-40 bg-slate-100 dark:bg-slate-800 border-b border-l border-border-light dark:border-border-dark py-4 px-4 w-[280px] shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-2">
+<span>مشخصات کالا</span>
+<span class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-slate-600">sort</span>
+</div>
+</th>
+<th class="bg-slate-50 dark:bg-slate-800 border-b border-l border-border-light dark:border-border-dark py-4 px-4 min-w-[120px] text-center">
+                                        مقدار سیستم
+                                    </th>
+<th class="bg-white dark:bg-surface-dark border-b border-l border-border-light dark:border-border-dark py-3 px-4 min-w-[220px] group relative align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-slate-800 dark:text-white">شعبه مرکزی</span>
+<span class="size-2 rounded-full bg-red-500" title="دارای خطا"></span>
+</div>
+<div class="text-[10px] text-slate-400 font-normal">تهران - ونک</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-transparent group-hover:bg-slate-200 dark:group-hover:bg-slate-700 cursor-col-resize transition-colors"></div>
+</th>
+<th class="bg-white dark:bg-surface-dark border-b border-l border-border-light dark:border-border-dark py-3 px-4 min-w-[220px] group relative align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-slate-800 dark:text-white">شعبه شیراز</span>
+<span class="size-2 rounded-full bg-green-500" title="فعال"></span>
+</div>
+<div class="text-[10px] text-slate-400 font-normal">فارس - معالی‌آباد</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-transparent group-hover:bg-slate-200 dark:group-hover:bg-slate-700 cursor-col-resize transition-colors"></div>
+</th>
+<th class="bg-white dark:bg-surface-dark border-b border-l border-border-light dark:border-border-dark py-3 px-4 min-w-[220px] group relative align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-slate-800 dark:text-white">شعبه مشهد</span>
+<span class="size-2 rounded-full bg-blue-500 animate-pulse" title="در حال پردازش"></span>
+</div>
+<div class="text-[10px] text-slate-400 font-normal">خراسان - احمدآباد</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-transparent group-hover:bg-slate-200 dark:group-hover:bg-slate-700 cursor-col-resize transition-colors"></div>
+</th>
+<th class="bg-white dark:bg-surface-dark border-b border-l border-border-light dark:border-border-dark py-3 px-4 min-w-[220px] group relative align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-slate-800 dark:text-white">شعبه تبریز</span>
+<span class="material-symbols-outlined text-slate-400 text-xs">cloud_off</span>
+</div>
+<div class="text-[10px] text-slate-400 font-normal">آذربایجان - ولیعصر</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-transparent group-hover:bg-slate-200 dark:group-hover:bg-slate-700 cursor-col-resize transition-colors"></div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark text-slate-700 dark:text-slate-200">
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="sticky right-0 z-20 bg-white group-hover:bg-slate-50 dark:bg-surface-dark dark:group-hover:bg-surface-dark border-l border-border-light dark:border-border-dark p-4 shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)] align-top">
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-400">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white text-sm">لپ‌تاپ ایسوس X515</span>
+<span class="font-mono text-xs text-slate-500 mt-1">CODE: 102033</span>
+<span class="text-[10px] text-blue-600 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-400 px-1.5 py-0.5 rounded w-fit mt-1">دیجیتال</span>
+</div>
+</div>
+</td>
+<td class="p-4 border-l border-border-light dark:border-border-dark text-center font-mono text-slate-500 font-medium align-top pt-6 bg-slate-50/50 dark:bg-white/5">
+                                        50
+                                    </td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top bg-red-50/30 dark:bg-red-900/5">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-red-500">45</span>
+</div>
+<div class="relative">
+<input class="w-full text-center font-mono text-sm border-red-300 dark:border-red-800 rounded-lg focus:ring-red-500 focus:border-red-500 bg-white dark:bg-slate-800 h-9" type="text" value="50"/>
+<div class="absolute inset-y-0 right-2 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-red-400 text-[16px]">edit</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-red-100 dark:border-red-800/30">
+<button class="text-slate-400 hover:text-red-500 transition-colors p-1 rounded" title="غیرفعال کردن">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+<label class="flex items-center gap-2 cursor-pointer">
+<span class="text-[10px] text-slate-500">تایید</span>
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary size-4 cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3 opacity-60 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-green-600">50</span>
+</div>
+<div class="relative">
+<input class="w-full text-center font-mono text-sm border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50 text-slate-400 cursor-not-allowed h-9" disabled="" type="text" value="50"/>
+<div class="absolute inset-y-0 left-2 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+</div>
+</div>
+<div class="flex items-center justify-center pt-2">
+<span class="text-[10px] text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full">همگام شده</span>
+</div>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top bg-blue-50/10 relative overflow-hidden">
+<div class="absolute inset-0 bg-white/60 dark:bg-surface-dark/60 backdrop-blur-[1px] z-10 flex flex-col items-center justify-center gap-2">
+<div class="size-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+<span class="text-[10px] font-medium text-blue-600">در حال ثبت...</span>
+</div>
+<div class="flex flex-col gap-3 blur-[1px]">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-slate-700">--</span>
+</div>
+<input class="w-full border-slate-200 h-9 rounded-lg" type="text"/>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono text-slate-300">--</span>
+</div>
+<div class="relative group/input">
+<input class="w-full text-center font-mono text-sm border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-surface-dark h-9 transition-all hover:border-slate-300" placeholder="وارد کنید" type="text"/>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800">
+<button class="text-slate-300 hover:text-slate-500 transition-colors p-1 rounded">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+<label class="flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100">
+<input class="rounded border-slate-300 text-primary focus:ring-primary size-4 cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="sticky right-0 z-20 bg-white group-hover:bg-slate-50 dark:bg-surface-dark dark:group-hover:bg-surface-dark border-l border-border-light dark:border-border-dark p-4 shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)] align-top">
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-400">mouse</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white text-sm">موس بی‌سیم لاجیتک</span>
+<span class="font-mono text-xs text-slate-500 mt-1">CODE: 504011</span>
+<span class="text-[10px] text-purple-600 bg-purple-50 dark:bg-purple-900/30 dark:text-purple-400 px-1.5 py-0.5 rounded w-fit mt-1">جانبی</span>
+</div>
+</div>
+</td>
+<td class="p-4 border-l border-border-light dark:border-border-dark text-center font-mono text-slate-500 font-medium align-top pt-6 bg-slate-50/50 dark:bg-white/5">
+                                        120
+                                    </td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3 opacity-60">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-green-600">120</span>
+</div>
+<input class="w-full text-center font-mono text-sm border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50 text-slate-400 h-9" disabled="" type="text" value="120"/>
+<div class="flex items-center justify-center pt-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+</div>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top bg-red-50/20 dark:bg-red-900/10">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">وضعیت:</span>
+<span class="font-bold text-red-600 text-[10px]">خطای شبکه</span>
+</div>
+<div class="relative">
+<input class="w-full text-center font-mono text-sm border-red-300 dark:border-red-800 rounded-lg bg-white dark:bg-surface-dark h-9" type="text" value="115"/>
+<div class="absolute inset-y-0 left-2 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-red-500 text-[18px]">error</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-1 bg-red-100 dark:bg-red-900/40 hover:bg-red-200 text-red-700 dark:text-red-300 py-1.5 rounded-lg text-xs font-medium transition-colors">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+                                                تلاش مجدد
+                                            </button>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono text-slate-300">--</span>
+</div>
+<input class="w-full text-center font-mono text-sm border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-surface-dark h-9" placeholder="120" type="text"/>
+<div class="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800">
+<button class="text-slate-300 hover:text-slate-500 transition-colors p-1 rounded">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+<label class="flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100">
+<input class="rounded border-slate-300 text-primary focus:ring-primary size-4 cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3 opacity-40 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono text-slate-300">--</span>
+</div>
+<input class="w-full text-center font-mono text-sm border-slate-100 dark:border-slate-800 rounded-lg bg-slate-50 dark:bg-slate-800/50 h-9 cursor-not-allowed" disabled="" placeholder="-" type="text"/>
+</div>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="sticky right-0 z-20 bg-white group-hover:bg-slate-50 dark:bg-surface-dark dark:group-hover:bg-surface-dark border-l border-border-light dark:border-border-dark p-4 shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)] align-top">
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-400">kitchen</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white text-sm">یخچال ساید بای ساید</span>
+<span class="font-mono text-xs text-slate-500 mt-1">CODE: 882100</span>
+<span class="text-[10px] text-green-600 bg-green-50 dark:bg-green-900/30 dark:text-green-400 px-1.5 py-0.5 rounded w-fit mt-1">لوازم خانگی</span>
+</div>
+</div>
+</td>
+<td class="p-4 border-l border-border-light dark:border-border-dark text-center font-mono text-slate-500 font-medium align-top pt-6 bg-slate-50/50 dark:bg-white/5">
+                                        8
+                                    </td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3 opacity-60">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-green-600">8</span>
+</div>
+<input class="w-full text-center font-mono text-sm border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50 text-slate-400 h-9" disabled="" type="text" value="8"/>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3 opacity-60">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-green-600">8</span>
+</div>
+<input class="w-full text-center font-mono text-sm border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50 text-slate-400 h-9" disabled="" type="text" value="8"/>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top bg-yellow-50/40 dark:bg-yellow-900/10">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-yellow-600">5</span>
+</div>
+<input class="w-full text-center font-mono text-sm border-yellow-300 dark:border-yellow-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 bg-white dark:bg-slate-800 h-9" type="text" value="5"/>
+<div class="flex items-center justify-between pt-1 border-t border-yellow-100 dark:border-yellow-800/30">
+<button class="text-slate-400 hover:text-red-500 transition-colors p-1 rounded" title="غیرفعال کردن">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+<label class="flex items-center gap-2 cursor-pointer">
+<span class="text-[10px] text-slate-500">تایید</span>
+<input class="rounded border-slate-300 text-primary focus:ring-primary size-4 cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</td>
+<td class="p-3 border-l border-border-light dark:border-border-dark align-top">
+<div class="flex flex-col gap-3 opacity-60">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">موجودی فعلی:</span>
+<span class="font-mono font-bold text-green-600">8</span>
+</div>
+<input class="w-full text-center font-mono text-sm border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50 text-slate-400 h-9" disabled="" type="text" value="8"/>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="border-t border-border-light dark:border-border-dark p-4 bg-slate-50 dark:bg-surface-dark rounded-b-xl flex items-center justify-between text-sm z-20 relative">
+<span class="text-slate-500 dark:text-slate-400">نمایش 3 مورد از 145</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded border border-border-light dark:border-border-dark text-slate-500 disabled:opacity-50 hover:bg-white dark:hover:bg-white/5 transition-colors" disabled="">قبلی</button>
+<span class="text-slate-600 dark:text-slate-300 px-2 font-mono">1</span>
+<button class="px-3 py-1 rounded border border-border-light dark:border-border-dark text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-white/5 transition-colors">بعدی</button>
+</div>
+</div>
+</div>
+<div class="h-24"></div>
+</div>
+</div>
+<div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[700px] z-50">
+<div class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl p-4 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] flex items-center justify-between border border-slate-800 dark:border-slate-200 ring-4 ring-black/5 dark:ring-white/10">
+<div class="flex items-center gap-6 px-2">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 bg-primary rounded-xl text-slate-900 font-bold text-lg shadow-[0_0_10px_rgba(19,236,91,0.4)]">2</div>
+<div class="flex flex-col">
+<span class="font-bold text-base">تغییر در انتظار تایید</span>
+<span class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">شعبه تهران، شعبه مشهد</span>
+</div>
+</div>
+<div class="h-8 w-px bg-slate-700 dark:bg-slate-300 hidden sm:block"></div>
+<div class="hidden sm:flex flex-col text-xs text-slate-400 dark:text-slate-500">
+<span>1 خطا (شعبه شیراز)</span>
+<span class="text-yellow-400 dark:text-yellow-600 font-medium">نیاز به بررسی</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 dark:text-slate-600 hover:bg-white/10 dark:hover:bg-black/5 transition-colors">
+                        انصراف
+                    </button>
+<button class="px-6 py-2.5 rounded-xl text-sm font-bold bg-primary hover:bg-primary-dark text-slate-900 transition-all shadow-[0_0_20px_rgba(19,236,91,0.25)] flex items-center gap-2 group transform active:scale-95">
+<span class="material-symbols-outlined text-[20px] group-hover:animate-pulse">bolt</span>
+                        تایید و اجرا
+                    </button>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

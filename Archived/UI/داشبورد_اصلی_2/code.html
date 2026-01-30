@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>درخت هلو - داشبورد اصلی</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-dark": "#162b1e", // Slightly lighter for cards
+                        "surface-darker": "#0d1b11", // Darker for contrast
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "body": ["Vazirmatn", "Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #102216; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #23482f; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #13ec5b; 
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-body antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="w-72 h-full flex flex-col bg-surface-dark border-l border-[#23482f] overflow-y-auto shrink-0 z-20 shadow-xl transition-all duration-300">
+<div class="p-6 flex flex-col gap-4 border-b border-[#23482f]">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 flex items-center justify-center aspect-square rounded-xl size-12 text-primary border border-primary/20">
+<span class="material-symbols-outlined" style="font-size: 28px;">nature</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-tight">درخت هلو</h1>
+<p class="text-gray-400 text-xs font-normal mt-1">مدیریت شعب</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2 p-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 border border-primary/20 group transition-all" href="#">
+<span class="material-symbols-outlined text-primary fill">dashboard</span>
+<p class="text-white text-sm font-medium">داشبورد اصلی</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#23482f]/50 text-gray-400 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<p class="text-sm font-medium">شعب</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#23482f]/50 text-gray-400 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<p class="text-sm font-medium">موجودی</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#23482f]/50 text-gray-400 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<p class="text-sm font-medium">انتقالات</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#23482f]/50 text-gray-400 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium">گزارش‌ها</p>
+</a>
+</nav>
+<div class="p-4 border-t border-[#23482f]">
+<div class="flex items-center gap-3 px-2">
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary/30" data-alt="User profile picture of a manager" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD46RbrJ2fCbVY5TspjilDWGGsB5ZbwjhftEvlrm4VXQ_tDNXJCeKs0NZDIEWZehSoMPMO2zd_HnMZeq9JsE4JD75ZqDj8GalF_JKVW2SEQ9tt8jWKUvyuVYWF2MIedyFpckCYrMbmI4OLwqzNvsp8RXMhJNA1LsX3X5iZDIqY8hssTSBcO53KjYwOp1gNw0Tev8WaJF_lI0dJy8_X-FlXfID2SoU7zoyIM77SLGka9pDsDf84tHgO1ez79-usU_nJYE0d2NR2RTQ');"></div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-bold">آرش مدیری</p>
+<p class="text-primary text-xs">مدیر کل سیستم</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<header class="h-16 shrink-0 border-b border-[#23482f] flex items-center justify-between px-8 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4 w-1/2 md:w-1/3">
+<button class="p-2 rounded-xl text-gray-400 hover:text-white hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<label class="relative flex items-center w-full max-w-md h-10 rounded-xl bg-surface-dark border border-[#23482f] focus-within:border-primary/50 transition-colors overflow-hidden">
+<div class="absolute right-3 text-gray-400 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-full bg-transparent border-none text-white text-sm placeholder:text-gray-500 pr-10 pl-4 focus:ring-0" placeholder="جستجو در شعب، کالاها..." type="text"/>
+</label>
+</div>
+<div class="flex items-center gap-3">
+<button class="size-10 flex items-center justify-center rounded-xl bg-surface-dark border border-[#23482f] text-gray-300 hover:text-primary hover:border-primary/30 transition-all" title="راهنما">
+<span class="material-symbols-outlined" style="font-size: 20px;">help</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-xl bg-surface-dark border border-[#23482f] text-gray-300 hover:text-primary hover:border-primary/30 transition-all" title="تنظیمات ظاهر">
+<span class="material-symbols-outlined" style="font-size: 20px;">palette</span>
+</button>
+<button class="relative size-10 flex items-center justify-center rounded-xl bg-surface-dark border border-[#23482f] text-gray-300 hover:text-primary hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">notifications</span>
+<span class="absolute top-2 left-2.5 size-2 bg-red-500 rounded-full border-2 border-surface-dark"></span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-xl bg-surface-dark border border-[#23482f] text-gray-300 hover:text-white transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-dark p-5 rounded-2xl border border-[#23482f] flex flex-col justify-between h-36 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute -left-4 -bottom-4 text-[#23482f]/30 group-hover:text-primary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 96px;">support_agent</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<p class="text-gray-400 text-sm font-medium">سلامت ایجنت‌ها</p>
+<span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-md font-bold">پایدار</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-white text-3xl font-bold font-display">14<span class="text-lg text-gray-500 font-normal mx-1">/</span>15</p>
+<p class="text-primary/80 text-xs mt-1">ایجنت فعال</p>
+</div>
+</div>
+<div class="bg-surface-dark p-5 rounded-2xl border border-[#23482f] flex flex-col justify-between h-36 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute -left-4 -bottom-4 text-[#23482f]/30 group-hover:text-primary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 96px;">cloud_sync</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<p class="text-gray-400 text-sm font-medium">یکپارچگی داده‌ها</p>
+<span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-md font-bold">عالی</span>
+</div>
+<div class="z-10 mt-auto flex items-end gap-2">
+<p class="text-white text-3xl font-bold font-display">98.5%</p>
+<p class="text-gray-500 text-xs mb-1">همگام‌سازی</p>
+</div>
+</div>
+<div class="bg-surface-dark p-5 rounded-2xl border border-[#23482f] flex flex-col justify-between h-36 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute -left-4 -bottom-4 text-[#23482f]/30 group-hover:text-red-500/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 96px;">warning</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<p class="text-gray-400 text-sm font-medium">هشدار موجودی</p>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-white text-3xl font-bold font-display">5 <span class="text-sm font-normal text-gray-400">کالا</span></p>
+<p class="text-red-400 text-xs mt-1">نیاز به شارژ فوری</p>
+</div>
+</div>
+<div class="bg-surface-dark p-5 rounded-2xl border border-[#23482f] flex flex-col justify-between h-36 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute -left-4 -bottom-4 text-[#23482f]/30 group-hover:text-primary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 96px;">local_shipping</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<p class="text-gray-400 text-sm font-medium">انتقالات منتظر</p>
+<span class="bg-yellow-500/10 text-yellow-500 text-xs px-2 py-1 rounded-md font-bold">در حال پردازش</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-white text-3xl font-bold font-display">3 <span class="text-sm font-normal text-gray-400">درخواست</span></p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold">وضعیت آنلاین شعب</h3>
+<button class="text-primary text-sm font-medium hover:underline">مشاهده همه</button>
+</div>
+<div class="bg-surface-dark border border-[#23482f] rounded-2xl overflow-hidden shadow-lg">
+<div class="overflow-x-auto">
+<table class="w-full text-right">
+<thead class="bg-[#193322] border-b border-[#23482f]">
+<tr>
+<th class="px-6 py-4 text-xs font-semibold text-gray-300 uppercase tracking-wider">نام شعبه</th>
+<th class="px-6 py-4 text-xs font-semibold text-gray-300 uppercase tracking-wider">مدیر شعبه</th>
+<th class="px-6 py-4 text-xs font-semibold text-gray-300 uppercase tracking-wider">وضعیت اتصال</th>
+<th class="px-6 py-4 text-xs font-semibold text-gray-300 uppercase tracking-wider">آخرین پینگ</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#23482f]">
+<tr class="group hover:bg-[#1a2f25] transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">store</span>
+</div>
+<span class="text-white text-sm font-medium">شعبه مرکزی</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-300 text-sm">آقای رضایی</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                                                        آنلاین
+                                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-400 text-sm font-mono" dir="ltr">Now</td>
+</tr>
+<tr class="group hover:bg-[#1a2f25] transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-gray-700/30 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined text-lg">store</span>
+</div>
+<span class="text-white text-sm font-medium">شعبه بازار</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-300 text-sm">خانم کمالی</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-500/10 text-red-500 border border-red-500/20">
+<span class="size-1.5 rounded-full bg-red-500"></span>
+                                                        آفلاین
+                                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-400 text-sm font-mono" dir="ltr">1h ago</td>
+</tr>
+<tr class="group hover:bg-[#1a2f25] transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">store</span>
+</div>
+<span class="text-white text-sm font-medium">شعبه شمال</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-300 text-sm">آقای محمدی</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                                                        آنلاین
+                                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-400 text-sm font-mono" dir="ltr">5m ago</td>
+</tr>
+<tr class="group hover:bg-[#1a2f25] transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">store</span>
+</div>
+<span class="text-white text-sm font-medium">شعبه تجریش</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-300 text-sm">خانم صدر</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                                                        آنلاین
+                                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-400 text-sm font-mono" dir="ltr">12m ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold">هشدارهای موجودی</h3>
+</div>
+<div class="bg-surface-dark border border-[#23482f] rounded-2xl p-4 flex flex-col gap-3">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-darker border border-red-500/20">
+<div class="size-10 rounded-lg bg-red-500/10 flex shrink-0 items-center justify-center text-red-500">
+<span class="material-symbols-outlined">inventory</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-white text-sm font-medium">مانیتور LG 24MK</p>
+<p class="text-xs text-gray-400">شعبه مرکزی • موجودی: <span class="text-red-400 font-bold">2</span></p>
+</div>
+<button class="size-8 rounded-lg bg-[#23482f] hover:bg-primary/20 hover:text-primary text-gray-300 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-darker border border-yellow-500/20">
+<div class="size-10 rounded-lg bg-yellow-500/10 flex shrink-0 items-center justify-center text-yellow-500">
+<span class="material-symbols-outlined">inventory</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-white text-sm font-medium">کیبورد لاجیتک K400</p>
+<p class="text-xs text-gray-400">شعبه بازار • موجودی: <span class="text-yellow-400 font-bold">5</span></p>
+</div>
+<button class="size-8 rounded-lg bg-[#23482f] hover:bg-primary/20 hover:text-primary text-gray-300 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 flex-1">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold">انتقالات اخیر</h3>
+</div>
+<div class="bg-surface-dark border border-[#23482f] rounded-2xl p-4 flex flex-col gap-3 h-full">
+<div class="flex flex-col gap-2 pb-3 border-b border-[#23482f]">
+<div class="flex items-center justify-between">
+<span class="text-xs font-mono text-gray-500">#TR-8821</span>
+<span class="text-xs text-gray-400">2 دقیقه پیش</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-gray-300">شعبه مرکزی</span>
+<span class="material-symbols-outlined text-gray-500 text-sm rotate-180" dir="ltr">arrow_right_alt</span>
+<span class="text-sm text-white font-medium">شعبه شمال</span>
+</div>
+<p class="text-xs text-gray-400 bg-[#23482f]/30 p-2 rounded-lg">شامل: 10x کابل شبکه، 5x مودم ADSL</p>
+<div class="flex gap-2 mt-1">
+<button class="flex-1 py-1.5 rounded-lg bg-primary text-surface-darker text-xs font-bold hover:bg-primary/90 transition-colors">تایید</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-darker text-gray-300 text-xs font-bold border border-[#23482f] hover:text-white transition-colors">رد</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-mono text-gray-500">#TR-8820</span>
+<span class="text-xs text-gray-400">1 ساعت پیش</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-gray-300">انبار مرکزی</span>
+<span class="material-symbols-outlined text-gray-500 text-sm rotate-180" dir="ltr">arrow_right_alt</span>
+<span class="text-sm text-white font-medium">شعبه بازار</span>
+</div>
+<p class="text-xs text-gray-400 bg-[#23482f]/30 p-2 rounded-lg">شامل: 20x موس بی سیم</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

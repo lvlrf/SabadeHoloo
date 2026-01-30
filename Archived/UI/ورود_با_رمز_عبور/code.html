@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ورود به حساب کاربری | Login</title>
+<!-- Google Fonts: Vazirmatn for Persian, Inter for English numbers/latin text -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Vazirmatn:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007fff",
+                        "primary-hover": "#0066cc",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e293b",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                        "text-main-light": "#101418",
+                        "text-main-dark": "#f8fafc",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200 min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="w-full border-b border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo Section -->
+<div class="flex items-center gap-3 text-text-main-light dark:text-text-main-dark">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">پلتفرم مدیریت (SaaS)</h2>
+</div>
+<!-- Nav Actions -->
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex h-9 items-center justify-center rounded-lg px-4 bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-transparent dark:border-border-dark">
+<span class="truncate">پشتیبانی</span>
+</button>
+<button class="flex h-9 items-center justify-center rounded-lg px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary-hover transition-all">
+<span class="truncate">ثبت نام</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8">
+<!-- Login Card -->
+<div class="w-full max-w-[440px] bg-card-light dark:bg-card-dark rounded-2xl shadow-xl border border-border-light dark:border-border-dark overflow-hidden flex flex-col">
+<!-- Card Header -->
+<div class="px-8 pt-10 pb-2 text-center">
+<h1 class="text-2xl font-bold text-text-main-light dark:text-text-main-dark mb-2">
+                    ورود به حساب کاربری
+                </h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm leading-relaxed">
+                    برای دسترسی به پنل مدیریت، لطفا نام کاربری و رمز عبور خود را وارد کنید.
+                </p>
+</div>
+<!-- Login Form -->
+<div class="px-8 py-6 space-y-5">
+<!-- Username Field -->
+<div class="space-y-2">
+<label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark" for="username">
+                        نام کاربری یا ایمیل
+                    </label>
+<div class="relative flex items-center">
+<input class="w-full h-11 rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark placeholder-text-secondary-light dark:placeholder-text-secondary-dark focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm px-4 text-right" dir="ltr" id="username" placeholder="example@domain.com" type="text"/>
+<span class="material-symbols-outlined absolute left-3 text-text-secondary-light dark:text-text-secondary-dark text-[20px] pointer-events-none">
+                            person
+                        </span>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark" for="password">
+                            رمز عبور
+                        </label>
+<a class="text-xs font-medium text-primary hover:text-primary-hover hover:underline transition-colors" href="#">
+                            رمز عبور را فراموش کرده‌اید؟
+                        </a>
+</div>
+<!-- Password Input Group with RTL considerations -->
+<!-- In RTL: The flex container flows Right to Left. -->
+<!-- We want the input on the Right (Start) and the Eye icon on the Left (End). -->
+<div class="flex items-stretch rounded-lg shadow-sm">
+<input class="flex-1 w-full min-w-0 h-11 rounded-r-lg rounded-l-none border border-l-0 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark placeholder-text-secondary-light dark:placeholder-text-secondary-dark focus:ring-2 focus:ring-primary focus:border-primary focus:z-10 text-sm px-4 text-right" dir="ltr" id="password" placeholder="••••••••" type="password"/>
+<button class="flex items-center justify-center px-3 rounded-l-lg rounded-r-none border border-r-0 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:z-10" type="button">
+<span class="material-symbols-outlined text-[20px]">
+                                visibility
+                            </span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full h-11 bg-primary hover:bg-primary-hover text-white font-bold rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span>ورود به سیستم</span>
+<span class="material-symbols-outlined text-[20px] rtl:rotate-180">
+                            login
+                        </span>
+</button>
+</div>
+</div>
+<!-- Footer / Separator -->
+<div class="px-8 pb-8 pt-2">
+<div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+<span class="flex-shrink-0 mx-4 text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium">یا</span>
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+</div>
+<div class="text-center">
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                        حساب کاربری ندارید؟ 
+                        <a class="font-bold text-primary hover:text-primary-hover hover:underline mr-1" href="#">
+                            ثبت نام کنید
+                        </a>
+</p>
+</div>
+</div>
+<!-- Bottom decorative line -->
+<div class="h-1.5 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40"></div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full py-6 text-center">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark dir-ltr font-display opacity-60">
+            © 2024 SaaS Platform Inc. All rights reserved.
+        </p>
+</footer>
+</body></html>

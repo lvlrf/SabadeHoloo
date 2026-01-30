@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تنظیمات نمایش - درخت هلو</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Vazirmatn:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-dark": "#162e1e", // Slightly lighter than background-dark for cards
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "body": ["Vazirmatn", "Inter", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Vazirmatn', 'Inter', sans-serif;
+        }
+        /* Custom range slider styling for Webkit */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #13ec5b;
+            cursor: pointer;
+            margin-top: -8px; 
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #4b5563;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white h-screen flex overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-background-dark border-l border-white/10 flex flex-col flex-shrink-0 z-20 transition-all duration-300">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center shrink-0 shadow-lg" data-alt="Gradient circle representing peach logo">
+<!-- Peach Icon using material symbol -->
+<span class="material-symbols-outlined text-white">nutrition</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<h1 class="text-white text-lg font-bold leading-tight truncate">درخت هلو</h1>
+<p class="text-primary/80 text-xs font-normal truncate">برنامه مدیریت شعب هلو</p>
+</div>
+</div>
+<nav class="flex-1 px-4 flex flex-col gap-2 mt-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-sm font-medium">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">storefront</span>
+<span class="text-sm font-medium">شعب</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">group</span>
+<span class="text-sm font-medium">کاربران</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary border border-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined fill-current">settings</span>
+<span class="text-sm font-bold">تنظیمات</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-white/10">
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="w-8 h-8 rounded-full bg-slate-700 bg-center bg-cover" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByWdvceDnefPzk6UhmPflWDc23CLxD75AMwZneWpoKWeUZgdloXh4pkV-1Dz47_y76OJ4R30jFXGzGlZqWCC04IfUYk47i3OJG3mWtSZROhwLuduQNqNlT0VR6bKs7wA5eAJIsI4vgnBDr_067T0PpbfachfpQ6eoM7LPL2AehhRTJUPAmypp-5-WlpSo0ePvfJEuErdgbYkrWWgSQpPV-wW0-KdooeeTVUYEGdQqsC58Vl1LB3AgeNu9FBOuQr5FrCKPl3YX2TA');"></div>
+<div class="flex flex-col">
+<span class="text-white text-sm font-medium">علی محمدی</span>
+<span class="text-slate-400 text-xs">مدیر سیستم</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Top Navigation / Breadcrumbs -->
+<header class="h-16 flex items-center justify-between px-8 border-b border-white/5 bg-background-dark/50 backdrop-blur-md z-10 sticky top-0">
+<div class="flex items-center gap-2 text-sm">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">خانه</a>
+<span class="text-slate-600 dark:text-slate-500">/</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">تنظیمات</a>
+<span class="text-slate-600 dark:text-slate-500">/</span>
+<span class="text-white font-medium">تنظیمات نمایش</span>
+</div>
+<button class="p-2 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-4xl mx-auto flex flex-col gap-8 pb-10">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-black text-white tracking-tight">تنظیمات نمایش</h1>
+<p class="text-slate-400 text-base">ظاهر برنامه را متناسب با سلیقه خود تغییر دهید.</p>
+</div>
+<hr class="border-white/10"/>
+<!-- Theme Selection -->
+<section class="flex flex-col gap-5">
+<h2 class="text-xl font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">palette</span>
+                        تم برنامه
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Light Theme Option -->
+<label class="group cursor-pointer relative">
+<input class="peer sr-only" name="theme" type="radio" value="light"/>
+<div class="flex flex-col gap-3 p-4 rounded-2xl bg-surface-dark border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-dark/80 transition-all hover:bg-white/5">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-gray-100 border border-gray-200 shadow-inner group-hover:shadow-md transition-shadow">
+<!-- Abstract representation of light UI -->
+<div class="absolute top-4 right-4 w-3/4 h-3/4 bg-white rounded shadow-sm border border-gray-100 flex flex-col gap-2 p-2" data-alt="Abstract white card on light gray background representing light mode">
+<div class="h-2 w-1/3 bg-gray-200 rounded"></div>
+<div class="h-2 w-full bg-gray-100 rounded"></div>
+<div class="h-2 w-2/3 bg-gray-100 rounded"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-white font-bold">روشن</p>
+<p class="text-slate-400 text-sm">حالت روز، کنتراست بالا</p>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-slate-500 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-[16px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Dark Theme Option (Active) -->
+<label class="group cursor-pointer relative">
+<input checked="" class="peer sr-only" name="theme" type="radio" value="dark"/>
+<div class="flex flex-col gap-3 p-4 rounded-2xl bg-surface-dark border-2 border-transparent peer-checked:border-primary peer-checked:shadow-[0_0_15px_rgba(19,236,91,0.15)] transition-all hover:bg-white/5">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-[#0f1012] border border-white/10 shadow-inner group-hover:shadow-md transition-shadow">
+<!-- Abstract representation of dark UI -->
+<div class="absolute top-4 right-4 w-3/4 h-3/4 bg-[#1e2024] rounded shadow-lg border border-white/5 flex flex-col gap-2 p-2" data-alt="Abstract dark card on black background representing dark mode">
+<div class="h-2 w-1/3 bg-white/20 rounded"></div>
+<div class="h-2 w-full bg-white/10 rounded"></div>
+<div class="h-2 w-2/3 bg-white/10 rounded"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-white font-bold">تاریک</p>
+<p class="text-slate-400 text-sm">حالت شب، محافظت از چشم</p>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-slate-500 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-[16px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+</div>
+</label>
+</div>
+</section>
+<hr class="border-white/10"/>
+<!-- Typography & Density -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Font Size Slider -->
+<section class="flex flex-col gap-5">
+<h2 class="text-xl font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">text_fields</span>
+                            تایپوگرافی
+                        </h2>
+<div class="bg-surface-dark p-6 rounded-2xl border border-white/5 flex flex-col gap-6">
+<div class="flex justify-between items-center text-white">
+<span class="text-sm font-medium">اندازه قلم</span>
+<span class="text-primary text-sm font-bold bg-primary/10 px-2 py-1 rounded">متوسط (14px)</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs text-slate-400">Aa</span>
+<input class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer" max="3" min="1" step="1" type="range" value="2"/>
+<span class="text-xl text-white">Aa</span>
+</div>
+<div class="flex justify-between px-1">
+<span class="text-xs text-slate-500">کوچک</span>
+<span class="text-xs text-slate-500">متوسط</span>
+<span class="text-xs text-slate-500">بزرگ</span>
+</div>
+</div>
+</section>
+<!-- Table Density -->
+<section class="flex flex-col gap-5">
+<h2 class="text-xl font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">table_rows</span>
+                            تراکم جدول‌ها
+                        </h2>
+<div class="bg-surface-dark p-6 rounded-2xl border border-white/5 h-full">
+<label class="text-sm font-medium text-white block mb-4">ارتفاع سطرها</label>
+<div class="flex bg-background-dark p-1 rounded-lg border border-white/5">
+<button class="flex-1 py-2 px-4 rounded text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                                    فشرده
+                                </button>
+<button class="flex-1 py-2 px-4 rounded text-sm font-bold text-black bg-primary shadow-sm transition-all">
+                                    استاندارد
+                                </button>
+<button class="flex-1 py-2 px-4 rounded text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                                    راحت
+                                </button>
+</div>
+<p class="text-xs text-slate-500 mt-4 leading-relaxed">
+                                انتخاب حالت فشرده باعث می‌شود اطلاعات بیشتری در یک نگاه قابل مشاهده باشد.
+                            </p>
+</div>
+</section>
+</div>
+<!-- Preview Area -->
+<section class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">preview</span>
+                            پیش‌نمایش
+                        </h2>
+<span class="text-xs text-slate-500 bg-surface-dark px-2 py-1 rounded border border-white/5">
+                            داده‌های نمایشی
+                        </span>
+</div>
+<div class="bg-surface-dark border border-white/5 rounded-2xl overflow-hidden shadow-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-right">
+<thead class="bg-background-dark text-xs uppercase text-slate-400 font-semibold">
+<tr>
+<th class="px-6 py-4">نام شعبه</th>
+<th class="px-6 py-4">مدیر شعبه</th>
+<th class="px-6 py-4">وضعیت</th>
+<th class="px-6 py-4">درآمد ماهانه</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5 text-sm text-slate-300">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-white">شعبه مرکزی تهران</td>
+<td class="px-6 py-4">رضا کریمی</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                                                فعال
+                                            </span>
+</td>
+<td class="px-6 py-4 font-mono dir-ltr text-left">1,250,000,000 ریال</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-500 hover:text-white"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-white">شعبه اصفهان</td>
+<td class="px-6 py-4">سارا حسینی</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+                                                در حال تعمیر
+                                            </span>
+</td>
+<td class="px-6 py-4 font-mono dir-ltr text-left">840,000,000 ریال</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-500 hover:text-white"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-white">شعبه مشهد</td>
+<td class="px-6 py-4">علی رضایی</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                                                فعال
+                                            </span>
+</td>
+<td class="px-6 py-4 font-mono dir-ltr text-left">920,000,000 ریال</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-500 hover:text-white"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<div class="flex items-center gap-4 mt-4 pt-4 border-t border-white/10 sticky bottom-0 bg-background-dark/80 backdrop-blur pb-4">
+<button class="px-6 py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(19,236,91,0.3)] transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                        ذخیره تغییرات
+                    </button>
+<button class="px-6 py-3 bg-transparent text-slate-300 font-medium rounded-lg border border-white/10 hover:bg-white/5 hover:text-white transition-all">
+                        بازنشانی پیش‌فرض
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

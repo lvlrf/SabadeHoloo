@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>درخت هلو - جزئیات مغایرت و عملیات گروهی</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "primary-dark": "#0eb545",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e22",
+                        "border-light": "#e7f3eb",
+                        "border-dark": "#2a4234",
+                    },
+                    fontFamily: {
+                        "display": ['"Noto Sans Arabic"', "Inter", "sans-serif"],
+                        "body": ['"Noto Sans Arabic"', "Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white h-screen flex overflow-hidden">
+<!-- Right Sidebar (RTL means this is on the right) -->
+<aside class="w-72 bg-surface-light dark:bg-surface-dark border-l border-border-light dark:border-border-dark flex flex-col h-full shrink-0 transition-all duration-300 z-20 hidden lg:flex">
+<!-- Logo Header -->
+<div class="p-6 flex items-center gap-4">
+<div class="relative size-12 shrink-0 rounded-xl bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center overflow-hidden border border-green-200">
+<span class="material-symbols-outlined text-green-600 text-3xl">spa</span>
+<div class="absolute inset-0 bg-green-500/10" data-alt="Peach tree abstract logo background"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">درخت هلو</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">مدیریت شعب یکپارچه</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 overflow-y-auto px-4 space-y-2 py-4 no-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary-dark dark:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined fill">sync_alt</span>
+<span class="text-sm font-bold">عملیات و مغایرت</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">bar_chart</span>
+<span class="text-sm font-medium">گزارش‌ها</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">store</span>
+<span class="text-sm font-medium">شعب</span>
+</a>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-4 text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">سیستم</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">تنظیمات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">support_agent</span>
+<span class="text-sm font-medium">پشتیبانی</span>
+</a>
+</div>
+</nav>
+<!-- User Footer -->
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<button class="w-full flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-right">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center border-2 border-white dark:border-slate-600 shadow-sm" data-alt="User profile picture of a man" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_zMuuyTUe3V41ZlsmYztzfQEKYP3qETw-NYhNlMx9ottZKLG9VAbyjuMsJKoZdKYw7m0er3rRBxMuQ6a3W3pVzCXcu-4owbYB9dLVz7Oh8dZgjt13HN5M-MepS7vykHQO64yhqiJLAmxZ3yamCaemx8NjW8i8ncp7F9mxk--hx0Q4caKYTBMOJeJKVOC7DkBoqxmtXOvxffVmLYoBSkvr-6asc5g3MlEFZpKv2m2moOcmkxnvLsBrpFo20luXbPta9rCanCEeBw');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">امیرحسین رضایی</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">مدیر سیستم</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-xl">logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Top Header -->
+<header class="h-16 shrink-0 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 z-10">
+<div class="flex items-center gap-4">
+<button class="lg:hidden p-2 -mr-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">خانه</a>
+<span class="material-symbols-outlined text-xs rtl:rotate-180">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">عملیات</a>
+<span class="material-symbols-outlined text-xs rtl:rotate-180">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-semibold">مغایرت‌ها</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark hover:bg-slate-50 dark:hover:bg-white/5 transition-colors bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-500 text-sm">palette</span>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-200">ظاهر</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">expand_more</span>
+</button>
+<!-- Dropdown Content (Hidden for static demo but implied) -->
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white dark:border-slate-800"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 md:p-8 pb-32">
+<div class="max-w-7xl mx-auto space-y-6">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-1">جزئیات مغایرت و عملیات گروهی</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">شناسه همگام‌سازی: <span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-300">SYNC-2023-10-24-A8</span></p>
+</div>
+<div class="flex items-center gap-3">
+<button class="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">history</span>
+                            تاریخچه
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-slate-900 bg-primary hover:bg-primary-dark rounded-lg transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+                            اجرای عملیات جدید
+                        </button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-border-light dark:border-border-dark shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute -left-6 -top-6 bg-slate-50 dark:bg-white/5 rounded-full size-24 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">کل مغایرت‌ها</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">1,240</h3>
+</div>
+<span class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 material-symbols-outlined">data_alert</span>
+</div>
+<div class="relative z-10 mt-2 flex items-center gap-1 text-xs text-green-600 dark:text-green-400 font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12% نسبت به هفته قبل</span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-border-light dark:border-border-dark shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute -left-6 -top-6 bg-orange-50 dark:bg-orange-500/5 rounded-full size-24 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">در انتظار تایید</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">85</h3>
+</div>
+<span class="p-2 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 material-symbols-outlined">pending</span>
+</div>
+<div class="relative z-10 mt-2 w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-orange-400 h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-border-light dark:border-border-dark shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute -left-6 -top-6 bg-red-50 dark:bg-red-500/5 rounded-full size-24 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">خطای بحرانی</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">3</h3>
+</div>
+<span class="p-2 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 material-symbols-outlined">error</span>
+</div>
+<div class="relative z-10 mt-2 flex items-center gap-1 text-xs text-red-600 dark:text-red-400 font-medium">
+<span>نیاز به بررسی فوری</span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-border-light dark:border-border-dark shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute -left-6 -top-6 bg-green-50 dark:bg-green-500/5 rounded-full size-24 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">موفق</p>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">98%</h3>
+</div>
+<span class="p-2 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 material-symbols-outlined">check_circle</span>
+</div>
+<div class="relative z-10 mt-2 w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98%"></div>
+</div>
+</div>
+</div>
+<!-- Filters & Actions -->
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="flex flex-1 w-full md:w-auto gap-4">
+<div class="relative flex-1 max-w-md">
+<span class="absolute inset-y-0 right-3 flex items-center text-slate-400 material-symbols-outlined pointer-events-none">search</span>
+<input class="w-full h-11 pr-10 pl-4 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400 text-sm" placeholder="جستجو در نام شعبه..." type="text"/>
+</div>
+<div class="relative min-w-[160px] hidden sm:block">
+<select class="w-full h-11 pr-10 pl-8 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none appearance-none cursor-pointer text-sm">
+<option>همه وضعیت‌ها</option>
+<option>در انتظار تایید</option>
+<option>خطا</option>
+<option>موفق</option>
+</select>
+<span class="absolute inset-y-0 right-3 flex items-center text-slate-400 material-symbols-outlined pointer-events-none">filter_list</span>
+<span class="absolute inset-y-0 left-2 flex items-center text-slate-400 material-symbols-outlined pointer-events-none text-sm">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 h-11 px-4 text-sm font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-border-light dark:border-border-dark rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">download</span>
+<span class="hidden sm:inline">خروجی اکسل</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-right">
+<thead class="bg-background-light dark:bg-background-dark text-slate-500 dark:text-slate-400 border-b border-border-light dark:border-border-dark font-medium">
+<tr>
+<th class="py-4 pr-6 pl-4 w-12">
+<label class="flex items-center cursor-pointer relative">
+<input class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 dark:border-slate-600 shadow transition-all checked:border-primary checked:bg-primary hover:shadow-md focus:ring-0" type="checkbox"/>
+<span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<svg class="h-3.5 w-3.5" fill="currentColor" stroke="currentColor" stroke-width="1" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</label>
+</th>
+<th class="py-4 px-4 font-semibold">نام شعبه</th>
+<th class="py-4 px-4 font-semibold">نوع مغایرت</th>
+<th class="py-4 px-4 font-semibold">مقدار سیستم</th>
+<th class="py-4 px-4 font-semibold">مقدار شعبه</th>
+<th class="py-4 px-4 font-semibold">وضعیت</th>
+<th class="py-4 px-4 pl-6 font-semibold">عملیات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark text-slate-700 dark:text-slate-200">
+<!-- Row 1: Pending -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="py-4 pr-6 pl-4">
+<label class="flex items-center cursor-pointer relative">
+<input class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 dark:border-slate-600 shadow transition-all checked:border-primary checked:bg-primary hover:shadow-md focus:ring-0" type="checkbox"/>
+<span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<svg class="h-3.5 w-3.5" fill="currentColor" stroke="currentColor" stroke-width="1" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</label>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xs">T</div>
+<span class="font-medium">شعبه مرکزی تهران</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-500 dark:text-slate-400">مغایرت موجودی - #1024</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right">50</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right text-orange-500 font-bold">48</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400 border border-orange-200 dark:border-orange-800/30">
+<span class="size-1.5 rounded-full bg-orange-500"></span>
+                                            در انتظار تایید
+                                        </span>
+</td>
+<td class="py-4 px-4 pl-6">
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg tooltip-trigger" title="تایید و همگام‌سازی">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+<button class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 rounded-lg" title="مشاهده جزئیات">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Critical Error -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors bg-red-50/30 dark:bg-red-900/5">
+<td class="py-4 pr-6 pl-4">
+<label class="flex items-center cursor-pointer relative">
+<input class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 dark:border-slate-600 shadow transition-all checked:border-primary checked:bg-primary hover:shadow-md focus:ring-0" type="checkbox"/>
+<span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<svg class="h-3.5 w-3.5" fill="currentColor" stroke="currentColor" stroke-width="1" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</label>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-xs">S</div>
+<span class="font-medium">شعبه شیراز</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-500 dark:text-slate-400">تفاوت قیمت - #8821</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right">100,000</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right text-red-500 font-bold">95,000</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800/30">
+<span class="size-1.5 rounded-full bg-red-500"></span>
+                                            خطای سیستمی
+                                        </span>
+</td>
+<td class="py-4 px-4 pl-6">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-2 py-1 bg-red-100 dark:bg-red-900/30 hover:bg-red-200 dark:hover:bg-red-900/50 text-red-700 dark:text-red-300 rounded text-xs font-medium transition-colors">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+                                                تلاش مجدد
+                                            </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Success -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="py-4 pr-6 pl-4">
+<label class="flex items-center cursor-pointer relative">
+<input class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 dark:border-slate-600 shadow transition-all checked:border-primary checked:bg-primary hover:shadow-md focus:ring-0" type="checkbox"/>
+<span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<svg class="h-3.5 w-3.5" fill="currentColor" stroke="currentColor" stroke-width="1" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</label>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-xs">M</div>
+<span class="font-medium">شعبه مشهد</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-500 dark:text-slate-400">همگام‌سازی کاربران</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right">OK</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right text-green-600">OK</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800/30">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+                                            موفق
+                                        </span>
+</td>
+<td class="py-4 px-4 pl-6">
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 rounded-lg" title="گزارش">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Processing -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="py-4 pr-6 pl-4">
+<label class="flex items-center cursor-pointer relative">
+<input class="peer h-5 w-5 cursor-not-allowed appearance-none rounded border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800" disabled="" type="checkbox"/>
+</label>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-xs">T</div>
+<span class="font-medium">شعبه تبریز</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-500 dark:text-slate-400">انتقال انبار</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right">--</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right">--</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5 w-24">
+<div class="flex justify-between items-center text-[10px] text-slate-500">
+<span>در حال پردازش</span>
+<span>45%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full animate-pulse" style="width: 45%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 pl-6">
+<button class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-400 rounded-lg cursor-not-allowed">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Pending -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="py-4 pr-6 pl-4">
+<label class="flex items-center cursor-pointer relative">
+<input checked="" class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 dark:border-slate-600 shadow transition-all checked:border-primary checked:bg-primary hover:shadow-md focus:ring-0" type="checkbox"/>
+<span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<svg class="h-3.5 w-3.5" fill="currentColor" stroke="currentColor" stroke-width="1" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</label>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-600 dark:text-teal-400 font-bold text-xs">K</div>
+<span class="font-medium">شعبه کرج</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-500 dark:text-slate-400">تغییر کدینگ کالا</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right">A-100</td>
+<td class="py-4 px-4 font-mono dir-ltr text-right text-orange-500 font-bold">A-099</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400 border border-orange-200 dark:border-orange-800/30">
+<span class="size-1.5 rounded-full bg-orange-500"></span>
+                                            در انتظار تایید
+                                        </span>
+</td>
+<td class="py-4 px-4 pl-6">
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 rounded-lg tooltip-trigger" title="تایید و همگام‌سازی">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+<button class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 rounded-lg" title="مشاهده جزئیات">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="border-t border-border-light dark:border-border-dark p-4 flex items-center justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">نمایش 1 تا 5 از 1240 مورد</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded border border-border-light dark:border-border-dark text-slate-500 disabled:opacity-50 hover:bg-slate-50 dark:hover:bg-white/5" disabled="">قبلی</button>
+<button class="px-3 py-1 rounded border border-border-light dark:border-border-dark text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5">بعدی</button>
+</div>
+</div>
+</div>
+<!-- Spacer for sticky footer -->
+<div class="h-12"></div>
+</div>
+</div>
+<!-- Sticky Bulk Action Footer -->
+<div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[600px] z-30">
+<div class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl p-4 shadow-2xl flex items-center justify-between border border-slate-800 dark:border-slate-200 ring-4 ring-black/5">
+<div class="flex items-center gap-4 px-2">
+<div class="flex items-center justify-center size-8 bg-primary rounded-full text-slate-900 font-bold text-sm">3</div>
+<div class="flex flex-col">
+<span class="font-bold text-sm">مورد انتخاب شده</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">آماده برای همگام‌سازی</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 dark:text-slate-600 hover:bg-white/10 dark:hover:bg-black/5 transition-colors">
+                        انصراف
+                    </button>
+<button class="px-5 py-2 rounded-lg text-sm font-bold bg-primary hover:bg-primary-dark text-slate-900 transition-all shadow-[0_0_15px_rgba(19,236,91,0.3)] flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+                        تایید و اجرا
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

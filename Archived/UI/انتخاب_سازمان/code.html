@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>انتخاب سازمان</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Vazirmatn:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007fff",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "body": ["Vazirmatn", "Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Vazirmatn', 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-4 transition-colors duration-300">
+<!-- Modal Container -->
+<div class="w-full max-w-[480px] bg-surface-light dark:bg-surface-dark rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col relative">
+<!-- Header Section -->
+<div class="px-6 pt-8 pb-4 flex flex-col items-center">
+<!-- Decorative Icon -->
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-[28px]">domain</span>
+</div>
+<h2 class="text-gray-900 dark:text-white tracking-tight text-2xl font-bold leading-tight text-center">
+                انتخاب سازمان
+            </h2>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal mt-2 text-center max-w-xs">
+                لطفاً برای ادامه وارد یکی از سازمان‌های زیر شوید
+            </p>
+</div>
+<!-- Search Section -->
+<div class="px-6 py-2">
+<div class="relative w-full group">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full p-3 pr-10 text-sm text-gray-900 border border-gray-200 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary transition-all outline-none" placeholder="جستجو در سازمان‌ها..." type="text"/>
+</div>
+</div>
+<!-- Organization List -->
+<div class="flex flex-col px-4 py-2 mt-2 max-h-[320px] overflow-y-auto custom-scrollbar space-y-2">
+<!-- List Item 1 -->
+<button class="w-full text-right group flex items-center gap-4 bg-white dark:bg-surface-dark hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 dark:hover:border-primary/30 rounded-lg p-3 transition-all duration-200">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border border-gray-100 dark:border-gray-700 group-hover:border-primary/30" data-alt="Blue abstract geometric logo on white background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaHdd0JikUK7xTeZ4wbjh9zh5OIAbJk938SHinOv7TZO95ewFO4mVCBcHXdBOw1SCKN0MkIx_VYKaJW_tg6dRt-fRhnTgEmKSeLUdHosh6iSsQl8YcQ10U4FR53QZ_ogLCHofvPyDUSQIXVymmm51AKadceOEkhHAmzggnpOkOVLFtAeQo3RaSAnonBBPRJN78GLRJhJrQoAu6tlLUfa6kBRfzmidckkOCXZOnZzydwsdvG6tq7PHnG6roGsC6iFDrQ83cnC2m07s");'></div>
+<!-- Notification Dot -->
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+</div>
+<div class="flex flex-col justify-center grow overflow-hidden">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal truncate group-hover:text-primary transition-colors">
+                        شرکت داده‌پردازی سحاب
+                    </p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal truncate">
+                        مدیر سیستم
+                    </p>
+</div>
+<div class="shrink-0 text-gray-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</div>
+</button>
+<!-- List Item 2 -->
+<button class="w-full text-right group flex items-center gap-4 bg-white dark:bg-surface-dark hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 dark:hover:border-primary/30 rounded-lg p-3 transition-all duration-200">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border border-gray-100 dark:border-gray-700 group-hover:border-primary/30" data-alt="Red abstract circular logo representing Golrang group" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEUFNQakMYVmIG8XNksOXAW2SIJO1HAloUO3vXGS6tRAGAZs_PThyFrsdP7ZdNw3hIdQywHHljvrQJ1I53p_c8AZ476eGH0ni_qmsbBzoxsFcBEO4HqSsv3QyguV7wAENmp5XAF7-lqPe5EmS45gLsdPUwZo2f3BPYoAivvEG8y3pXAhBEq6dsDIgCu2v0N2ZipwxpFKk_rTpKqowTtNst7WD-jNSceIPTQ7Z3Prg5EDZwoK7cj_krwyN4XSJHmK9YIz1DA3_Ml6M");'></div>
+</div>
+<div class="flex flex-col justify-center grow overflow-hidden">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal truncate group-hover:text-primary transition-colors">
+                        گروه صنعتی گلرنگ
+                    </p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal truncate">
+                        حسابدار ارشد
+                    </p>
+</div>
+<div class="shrink-0 text-gray-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</div>
+</button>
+<!-- List Item 3 -->
+<button class="w-full text-right group flex items-center gap-4 bg-white dark:bg-surface-dark hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 dark:hover:border-primary/30 rounded-lg p-3 transition-all duration-200">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border border-gray-100 dark:border-gray-700 group-hover:border-primary/30" data-alt="Green leaf logo representing Snapp group" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAfd98vrMHeJQLZRedCGPkerbuNhuBANlJwIvom5Q0vh-WhVgfY9Ly2dy6yCpD8Jj88kqcJnR0N5SwXoHloxzpN91XrGw9esWzj53JrrrPKltRYiR_jUaTZ22J8WMbTm2OWB1LGE_INrZJZbrXaAjnl3Yn02YqlzFQJC1gyWjWRBAlWCQD8N6Hyd74MNonwA9kuoLR1cnDoKf-oei4_dy9nDTQvLFrgTBr-wC2eFrhNH5ccG24JI7GQkveiZJMls4njO3z5WAIowQ");'></div>
+</div>
+<div class="flex flex-col justify-center grow overflow-hidden">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal truncate group-hover:text-primary transition-colors">
+                        اسنپ
+                    </p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal truncate">
+                        ناظر
+                    </p>
+</div>
+<div class="shrink-0 text-gray-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</div>
+</button>
+<!-- List Item 4 -->
+<button class="w-full text-right group flex items-center gap-4 bg-white dark:bg-surface-dark hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 dark:hover:border-primary/30 rounded-lg p-3 transition-all duration-200">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border border-gray-100 dark:border-gray-700 group-hover:border-primary/30" data-alt="Orange hexagon logo representing Digikala" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzZ76-peuzk2OShWDpX_dJe1w3C3C0IpG7kRhIxfZhHYNYAfzYeGo7SCAuzqkLBvZSw7sYQnEkLAyYqx7Zq_o5v3UV0_A6ZKMmiF7tFOuf0dy1fmsQHwl9wvTx0qCOE1plLQVw3pPCheNKuxeZCJCPHIIihup-P5a3JlRnCZLdHgNY-DUtbD8Et7v-46pRQqdmhL2XR7Xd83cjHE0IDA50nTlHPKjqD6l7xIZGo74_BRiwfgiKN2kdj1gM60lBKNyzBJZmxw89zyI");'></div>
+</div>
+<div class="flex flex-col justify-center grow overflow-hidden">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal truncate group-hover:text-primary transition-colors">
+                        دیجی‌کالا
+                    </p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal truncate">
+                        توسعه‌دهنده
+                    </p>
+</div>
+<div class="shrink-0 text-gray-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</div>
+</button>
+</div>
+<!-- Footer Actions -->
+<div class="px-6 py-5 mt-2 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/30">
+<div class="flex flex-col gap-3">
+<button class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg border border-dashed border-gray-300 dark:border-gray-600 text-primary dark:text-primary hover:bg-primary/5 hover:border-primary transition-all text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                    ایجاد سازمان جدید
+                </button>
+<a class="flex items-center justify-center gap-2 w-full py-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors text-sm font-normal" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                    خروج از حساب
+                </a>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>درخت هلو - جزئیات مغایرت و عملیات گروهی</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Vazirmatn:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#137fec",
+                        primary_hover: "#0f67be",
+                        surface: "#ffffff",
+                        background: "#f3f4f6",
+                        border: "#e2e8f0",
+                        text_main: "#111827",
+                        text_secondary: "#64748b",
+                        success: "#10b981",
+                        danger: "#ef4444",
+                        warning: "#f59e0b",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "body": ["Vazirmatn", "Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }.custom-checkbox {
+            appearance: none;
+            background-color: white;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 2px solid #cbd5e1;
+            border-radius: 0.25em;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em white;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+            background-color: white;
+        }
+        .custom-checkbox:checked {
+            background-color: #137fec;
+            border-color: #137fec;
+        }
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+            background-color: white;
+            box-shadow: none;
+        }.resize-handle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            cursor: col-resize;
+            transition: background-color 0.2s;
+            z-index: 10;
+        }
+        .resize-handle:hover {
+            background-color: #137fec;
+        }.excel-input:focus {
+            outline: 2px solid #137fec;
+            outline-offset: -2px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-background text-text_main font-body overflow-hidden h-screen flex">
+<aside class="w-64 bg-surface border-l border-border flex flex-col h-full shrink-0 z-30 transition-all duration-300 shadow-soft">
+<div class="p-6 border-b border-border/50">
+<div class="flex items-center gap-3">
+<div class="relative flex items-center justify-center shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shadow-sm ring-1 ring-border" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMeHSDClkat6HuZ3h4C6rv8yefqHGSLBnJPtZ3d6XvrTnMw-NYjwm411XnGErik_vpqZpZQgJKuniEsfWSKJVercpniXtGtQdJS5wG_e3Qe2fgEkDIGAgoM51YKyw0AGy2oYb651MULXARVGPkzlPnQ7N1PQMUgkag7LACLhn3J8vnWnai5rZ8e6N2jRP6qu4D0u9UiT0QeXClTEz1yUdPddLLC4wJxAS-GmHNFABEEYyS9q5Z4DfroqSuifBAMq-q5rB_iqGzPQ");'></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text_main text-base font-bold leading-tight">درخت هلو</h1>
+<p class="text-text_secondary text-[10px] font-normal mt-0.5">برنامه مدیریت شعب هلو</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 p-3 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text_secondary hover:bg-gray-50 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+<span class="text-sm font-medium">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text_secondary hover:bg-gray-50 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+<span class="text-sm font-medium">لیست شعب</span>
+</a>
+<div class="px-3 py-2 text-xs font-semibold text-text_secondary/50 mt-2">عملیات</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/5 text-primary border border-primary/10" href="#">
+<span class="material-symbols-outlined text-[22px] fill-1">sync_alt</span>
+<span class="text-sm font-bold">مغایرت‌گیری</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text_secondary hover:bg-gray-50 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px]">inventory</span>
+<span class="text-sm font-medium">مدیریت کالا</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text_secondary hover:bg-gray-50 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px]">description</span>
+<span class="text-sm font-medium">گزارشات</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border bg-gray-50/50">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg h-10 bg-white border border-border hover:bg-gray-50 hover:border-gray-300 text-text_secondary text-xs font-bold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>خروج از سیستم</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 bg-background relative">
+<header class="h-16 bg-surface border-b border-border flex items-center justify-between px-6 shadow-sm z-20">
+<div class="flex items-center gap-2 text-xs text-text_secondary">
+<span class="hover:text-primary cursor-pointer">داشبورد</span>
+<span class="material-symbols-outlined text-[14px] rotate-180">chevron_right</span>
+<span class="hover:text-primary cursor-pointer">عملیات</span>
+<span class="material-symbols-outlined text-[14px] rotate-180">chevron_right</span>
+<span class="font-bold text-text_main bg-gray-100 px-2 py-1 rounded">جزئیات مغایرت</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative hidden md:block group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="bg-gray-50 border border-border text-text_main text-sm rounded-lg h-9 w-64 pr-10 pl-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="جستجو..." type="text"/>
+</div>
+<div class="h-6 w-px bg-border mx-1"></div>
+<button class="size-9 rounded-lg hover:bg-gray-50 text-text_secondary hover:text-primary transition-colors" title="راهنما">
+<span class="material-symbols-outlined text-[22px]">help_outline</span>
+</button>
+<button class="size-9 rounded-lg hover:bg-gray-50 text-text_secondary hover:text-primary transition-colors group relative">
+<span class="material-symbols-outlined text-[22px]">palette</span>
+<div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-surface border border-border text-text_main text-xs px-3 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
+                        تنظیمات ظاهری
+                    </div>
+</button>
+<button class="flex items-center gap-2 mr-2 pl-2 pr-1 py-1 rounded-full border border-border hover:bg-gray-50 transition-colors bg-white">
+<img class="size-7 rounded-full object-cover" data-alt="User profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgKDDQOOhvvSVD8Ohr-FFggCzkJujGc_L8KU1f7RYv8JrWvryFGLXIexptRys4NVTn7Fh0aoDokFhhyRhtSDQQo3FYGDKmWgqJ_7NjH-bt2DLKBPb7toyBXuu61C_zvcdv1mYgBfpvaxKoIxhotES_6iBe8cbGoHg7mrc00Zn6MK_UnFmezXk7aMvuitWZm1Uma-vQ_fTD5UcGvaa3YdfwbUcA9699erRO9TlycOhW853XhrKbTs_kkmUlKvYessXNe1ZoWbjvVQ"/>
+<span class="text-xs font-bold text-text_main ml-1">مدیر سیستم</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-hidden flex flex-col p-6 gap-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 shrink-0">
+<div>
+<h2 class="text-2xl font-bold text-text_main tracking-tight">جزئیات مغایرت و عملیات گروهی</h2>
+<p class="text-text_secondary text-sm mt-1">بررسی مغایرت‌های موجودی بین دفتر مرکزی و شعب، و اعمال اصلاحات.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2 space-x-reverse overflow-hidden px-2">
+<div class="inline-flex items-center justify-center size-8 rounded-full bg-white ring-2 ring-white border border-gray-100" title="شعبه مرکزی">
+<span class="text-[10px] font-bold text-gray-600">اصلی</span>
+</div>
+<div class="inline-flex items-center justify-center size-8 rounded-full bg-blue-100 ring-2 ring-white border border-blue-200" title="شعبه تبریز - در حال بررسی">
+<span class="text-[10px] font-bold text-blue-700">تبریز</span>
+</div>
+<div class="inline-flex items-center justify-center size-8 rounded-full bg-red-100 ring-2 ring-white border border-red-200" title="شعبه شیراز - خطا">
+<span class="text-[10px] font-bold text-red-700">شیراز</span>
+</div>
+</div>
+<div class="h-8 w-px bg-border"></div>
+<button class="h-10 px-4 rounded-lg bg-white border border-border hover:bg-gray-50 text-text_secondary text-sm font-medium transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                        افزودن کالا
+                    </button>
+<button class="h-10 px-6 rounded-lg bg-primary hover:bg-primary_hover text-white text-sm font-bold shadow-lg shadow-primary/20 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                        پیش‌نمایش و اعمال
+                    </button>
+</div>
+</div>
+<div class="bg-surface rounded-xl border border-border shadow-sm flex flex-col flex-1 overflow-hidden">
+<div class="p-4 border-b border-border bg-gray-50/50 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-text_secondary">فیلتر وضعیت:</span>
+<div class="flex bg-white rounded-lg border border-border p-1">
+<button class="px-3 py-1 rounded text-xs font-medium bg-primary/10 text-primary">همه</button>
+<button class="px-3 py-1 rounded text-xs font-medium text-text_secondary hover:bg-gray-50">فقط مغایرت‌ها</button>
+<button class="px-3 py-1 rounded text-xs font-medium text-text_secondary hover:bg-gray-50">خطاها</button>
+</div>
+</div>
+<div class="h-4 w-px bg-border"></div>
+<div class="flex items-center gap-2">
+<input class="custom-checkbox text-primary" id="selectAll" type="checkbox"/>
+<label class="text-xs text-text_main font-medium cursor-pointer select-none" for="selectAll">انتخاب همه (14 مورد)</label>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-xs text-danger hover:bg-red-50 border border-transparent hover:border-red-200 px-3 py-1.5 rounded transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">block</span>
+                            غیرفعال کردن انتخاب‌شده‌ها
+                        </button>
+<button class="text-xs text-primary hover:bg-blue-50 border border-transparent hover:border-blue-200 px-3 py-1.5 rounded transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+                            بروزرسانی وضعیت
+                        </button>
+</div>
+</div>
+<div class="flex-1 overflow-auto bg-white relative">
+<table class="w-full text-right border-collapse min-w-[1000px]">
+<thead class="bg-gray-50 text-text_secondary sticky top-0 z-10 shadow-sm">
+<tr class="text-xs font-semibold uppercase h-11 border-b border-border">
+<th class="w-12 px-4 border-l border-border text-center">
+<span class="material-symbols-outlined text-[18px]">check_box_outline_blank</span>
+</th>
+<th class="w-24 px-4 border-l border-border text-center relative group">
+                                    وضعیت
+                                    <div class="resize-handle group-hover:bg-primary"></div>
+</th>
+<th class="px-4 py-2 border-l border-border relative group w-1/4">
+                                    نام کالا / کد
+                                    <div class="resize-handle group-hover:bg-primary"></div>
+</th>
+<th class="px-4 py-2 border-l border-border text-center w-32 relative group">
+                                    موجودی سیستم
+                                    <div class="resize-handle group-hover:bg-primary"></div>
+</th>
+<th class="px-4 py-2 border-l border-border text-center w-32 relative group">
+                                    موجودی شعبه
+                                    <div class="resize-handle group-hover:bg-primary"></div>
+</th>
+<th class="px-4 py-2 border-l border-border text-center w-40 bg-blue-50/50 text-primary relative group border-b-2 border-b-primary/20">
+                                    مقدار اصلاحی
+                                    <span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">edit</span>
+<div class="resize-handle group-hover:bg-primary"></div>
+</th>
+<th class="px-4 py-2 border-l border-border w-48 relative group">
+                                    پیشرفت عملیات
+                                    <div class="resize-handle group-hover:bg-primary"></div>
+</th>
+<th class="px-4 py-2 w-24 text-center">عملیات</th>
+</tr>
+</thead>
+<tbody class="text-sm divide-y divide-border">
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-4 py-3 text-center border-l border-border">
+<input class="custom-checkbox" type="checkbox"/>
+</td>
+<td class="px-4 py-3 text-center border-l border-border">
+<button class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold border border-green-200">فعال</button>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex flex-col">
+<span class="font-bold text-text_main">لپ‌تاپ ایسوس مدل X515</span>
+<span class="text-[11px] text-text_secondary font-mono mt-0.5">DK-8821034</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">12</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">10</td>
+<td class="px-3 py-2 border-l border-border text-center bg-blue-50/10">
+<input class="excel-input w-20 h-8 text-center font-mono font-bold text-text_main border border-border rounded bg-white shadow-sm focus:ring-0 text-sm" type="number" value="10"/>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-warning animate-pulse"></span>
+<span class="text-xs text-text_secondary">در انتظار تایید</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="size-8 rounded hover:bg-gray-100 text-text_secondary hover:text-danger transition-colors" title="غیرفعال کردن">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+</td>
+</tr>
+<tr class="bg-red-50/30 hover:bg-red-50/50 transition-colors group">
+<td class="px-4 py-3 text-center border-l border-border bg-white group-hover:bg-red-50/10">
+<input class="custom-checkbox" type="checkbox"/>
+</td>
+<td class="px-4 py-3 text-center border-l border-border">
+<button class="bg-gray-100 text-gray-500 text-[10px] px-2 py-0.5 rounded-full font-bold border border-gray-200">فعال</button>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex flex-col">
+<span class="font-bold text-text_main">موس بی‌سیم لاجیتک</span>
+<span class="text-[11px] text-text_secondary font-mono mt-0.5">LOG-9921</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">50</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">45</td>
+<td class="px-3 py-2 border-l border-border text-center">
+<input class="excel-input w-20 h-8 text-center font-mono font-bold text-text_main border border-danger/30 rounded bg-white shadow-sm focus:ring-0 text-sm" type="number" value="45"/>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex items-center justify-between w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-danger text-[18px]">error</span>
+<span class="text-xs text-danger font-medium">خطا در شعبه</span>
+</div>
+<button class="text-[10px] font-bold text-primary underline hover:text-primary_hover">تلاش مجدد</button>
+</div>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="size-8 rounded hover:bg-gray-100 text-text_secondary hover:text-danger transition-colors">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors group opacity-70">
+<td class="px-4 py-3 text-center border-l border-border">
+<input class="custom-checkbox" disabled="" type="checkbox"/>
+</td>
+<td class="px-4 py-3 text-center border-l border-border">
+<button class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold border border-green-200">فعال</button>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex flex-col">
+<span class="font-bold text-text_main">کیبورد مکانیکال ردراگون</span>
+<span class="text-[11px] text-text_secondary font-mono mt-0.5">RD-1029</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">5</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">5</td>
+<td class="px-3 py-2 border-l border-border text-center">
+<div class="text-center font-mono text-gray-400 text-sm">---</div>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[18px]">check_circle</span>
+<span class="text-xs text-success font-medium">همگام شده</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="size-8 rounded hover:bg-gray-100 text-text_secondary hover:text-danger transition-colors">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+</td>
+</tr>
+<tr class="bg-gray-50 text-gray-400 hover:bg-gray-100 transition-colors group">
+<td class="px-4 py-3 text-center border-l border-border">
+<input class="custom-checkbox opacity-50" type="checkbox"/>
+</td>
+<td class="px-4 py-3 text-center border-l border-border">
+<button class="bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded-full font-bold border border-gray-300">غیرفعال</button>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex flex-col">
+<span class="font-bold line-through decoration-gray-400">مانیتور سامسونگ 24</span>
+<span class="text-[11px] font-mono mt-0.5 opacity-70">SAM-2400</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono">0</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono">0</td>
+<td class="px-3 py-2 border-l border-border text-center">
+<input class="excel-input w-20 h-8 text-center font-mono text-gray-400 border border-border rounded bg-gray-100 text-sm" disabled="" type="number" value="0"/>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<span class="text-xs text-gray-400">---</span>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="size-8 rounded hover:bg-white text-gray-400 hover:text-success transition-colors" title="فعال‌سازی مجدد">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-4 py-3 text-center border-l border-border">
+<input class="custom-checkbox" type="checkbox"/>
+</td>
+<td class="px-4 py-3 text-center border-l border-border">
+<button class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold border border-green-200">فعال</button>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex flex-col">
+<span class="font-bold text-text_main">هارد اکسترنال وسترن</span>
+<span class="text-[11px] text-text_secondary font-mono mt-0.5">WD-1TB-BLK</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">200</td>
+<td class="px-4 py-3 text-center border-l border-border font-mono text-gray-500">198</td>
+<td class="px-3 py-2 border-l border-border text-center bg-blue-50/10">
+<input class="excel-input w-20 h-8 text-center font-mono font-bold text-text_main border border-border rounded bg-white shadow-sm focus:ring-0 text-sm" type="number" value="198"/>
+</td>
+<td class="px-4 py-3 border-l border-border">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-gray-300"></span>
+<span class="text-xs text-text_secondary">آماده ارسال</span>
+</div>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="size-8 rounded hover:bg-gray-100 text-text_secondary hover:text-danger transition-colors" title="غیرفعال کردن">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="border-t border-border bg-gray-50 p-4 flex items-center justify-between">
+<span class="text-xs text-text_secondary">نمایش 1 تا 5 از 14 مورد</span>
+<div class="flex items-center gap-1">
+<button class="size-8 rounded border border-border bg-white flex items-center justify-center hover:bg-gray-100 disabled:opacity-50 text-text_secondary">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="size-8 rounded bg-primary text-white text-xs font-bold flex items-center justify-center">1</button>
+<button class="size-8 rounded border border-transparent hover:bg-gray-200 text-text_secondary text-xs flex items-center justify-center">2</button>
+<button class="size-8 rounded border border-transparent hover:bg-gray-200 text-text_secondary text-xs flex items-center justify-center">3</button>
+<button class="size-8 rounded border border-border bg-white flex items-center justify-center hover:bg-gray-100 disabled:opacity-50 text-text_secondary">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

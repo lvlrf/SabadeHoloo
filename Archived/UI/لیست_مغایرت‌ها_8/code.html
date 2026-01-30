@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لیست مغایرت‌ها (جدید)! - درخت هلو</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Vazirmatn:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "primary-content": "#0d1b12",
+                        "primary-light": "#e7f3eb",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "text-main": "#0d1b12",
+                        "text-muted": "#4c9a66",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "body": ["Vazirmatn", "Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Vazirmatn', 'Inter', sans-serif;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-checkbox:checked {
+            background-color: #13ec5b;
+            border-color: #13ec5b;
+        }
+        .custom-checkbox:focus {
+            ring-color: #13ec5b;
+            --tw-ring-color: #13ec5b;
+        }.custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }.resize-handle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            cursor: col-resize;
+            transition: background-color 0.2s;
+        }
+        .resize-handle:hover {
+            background-color: #13ec5b;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main min-h-screen flex overflow-hidden">
+<aside class="w-72 bg-[#f8fcf9] border-l border-[#e7f3eb] flex flex-col h-screen shrink-0 overflow-y-auto">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat bg-cover rounded-xl size-12 shrink-0 bg-primary/20 flex items-center justify-center text-primary" data-alt="Stylized abstract peach tree logo">
+<span class="material-symbols-outlined text-[32px]">spa</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-lg font-bold leading-tight">درخت هلو</h1>
+<p class="text-text-muted text-xs font-normal">برنامه مدیریت شعب هلو</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary-light transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-main">dashboard</span>
+<span class="text-text-main text-sm font-medium">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary-light transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-main">analytics</span>
+<span class="text-text-main text-sm font-medium">گزارش‌ها</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-light border border-primary/20" href="#">
+<span class="material-symbols-outlined text-text-main fill-1">rule</span>
+<span class="text-text-main text-sm font-bold">مغایرت‌ها</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary-light transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-main">inventory_2</span>
+<span class="text-text-main text-sm font-medium">موجودی</span>
+</a>
+<div class="my-2 border-t border-gray-100"></div>
+<div class="relative group">
+<button class="w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-primary-light transition-colors text-right">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-main">settings</span>
+<span class="text-text-main text-sm font-medium">تنظیمات</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-sm">expand_more</span>
+</button>
+</div>
+</nav>
+</div>
+<div class="mt-auto p-6">
+<div class="bg-primary/10 rounded-xl p-4 flex flex-col items-center text-center gap-3">
+<div class="size-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main">پشتیبانی</p>
+<p class="text-xs text-text-muted mt-1">نیاز به راهنمایی دارید؟</p>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">تماس با ما</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+<header class="h-20 bg-[#f8fcf9] border-b border-[#e7f3eb] flex items-center justify-between px-8 shrink-0">
+<div class="flex items-center gap-2 text-sm">
+<a class="text-text-muted hover:text-primary transition-colors" href="#">خانه</a>
+<span class="text-text-muted/50">/</span>
+<span class="text-text-main font-medium">مغایرت‌ها</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-text-muted hover:text-text-main transition-colors rounded-full hover:bg-primary-light" title="راهنما">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="relative group">
+<button class="p-2 text-text-muted hover:text-text-main transition-colors rounded-full hover:bg-primary-light" title="تنظیمات ظاهری">
+<span class="material-symbols-outlined">palette</span>
+</button>
+<div class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg hidden group-hover:block z-50 p-2">
+<p class="text-xs font-bold text-gray-500 px-2 py-1">حالت نمایش</p>
+<button class="w-full text-right px-2 py-1.5 text-sm hover:bg-gray-50 rounded flex items-center justify-between text-primary font-medium">
+                            روشن
+                            <span class="material-symbols-outlined text-sm">check</span>
+</button>
+<button class="w-full text-right px-2 py-1.5 text-sm hover:bg-gray-50 rounded text-text-main">تاریک</button>
+</div>
+</div>
+<div class="h-6 w-[1px] bg-gray-200 mx-2"></div>
+<button class="relative p-2 text-text-muted hover:text-text-main transition-colors rounded-full hover:bg-primary-light">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+<div class="flex items-center gap-3 cursor-pointer group pr-4 border-r border-gray-200 mr-2">
+<div class="text-left hidden sm:block">
+<p class="text-sm font-bold text-text-main">علی محمدی</p>
+<p class="text-xs text-text-muted">مدیر سیستم</p>
+</div>
+<div class="size-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm" data-alt="User profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBazhB1Nz4kHczHOSKvFDbo7i8SvT2gUvXPBEOY3cAjkhoJOxHiWIr__ua_QC_8D3_OBI1NQ7jeUPrcmMlatn3PSkykBg7ylh0wltoKea9n5YsPugy1kCOf-EpUylhVg0oFZqI6P2irDVkDjSq7GNmFXZ6HlQwoyaqG37VAyUKQ8KVvVasVFPNkrkzyNRFnmV-luhiPbY-j9Q1iKm9VccEMGbTP5vCSRc3guEXTG6acrt6sl1iI2cp2cElZfbcc9wkmjQAUYe7hg'); background-size: cover;"></div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-main text-lg">expand_more</span>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-6">
+<div class="flex items-end justify-between">
+<div>
+<h2 class="text-3xl font-bold text-text-main tracking-tight">لیست مغایرت‌ها</h2>
+<p class="text-text-muted mt-2 text-sm">مقایسه و بررسی داده‌های کالاها در تمامی شعب به صورت یکپارچه</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-white border border-gray-200 text-text-main text-sm font-medium rounded-lg hover:bg-gray-50 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-lg">download</span>
+                            خروجی اکسل
+                        </button>
+<button class="px-4 py-2 bg-primary text-primary-content text-sm font-bold rounded-lg hover:bg-[#0fdc50] shadow-sm shadow-primary/30 flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg">sync</span>
+                            همگام‌سازی همه
+                        </button>
+</div>
+</div>
+<div class="border-b border-[#cfe7d7]">
+<div class="flex gap-8">
+<button class="relative pb-4 px-2 text-text-main font-bold text-sm border-b-[3px] border-primary transition-all">
+                            کالاها
+                            <span class="bg-red-100 text-red-600 text-[10px] px-1.5 py-0.5 rounded-full mr-2 align-middle">12</span>
+</button>
+<button class="relative pb-4 px-2 text-text-muted font-medium text-sm border-b-[3px] border-transparent hover:text-text-main hover:border-gray-200 transition-all">
+                            گروه‌بندی
+                            <span class="bg-gray-100 text-gray-600 text-[10px] px-1.5 py-0.5 rounded-full mr-2 align-middle">0</span>
+</button>
+<button class="relative pb-4 px-2 text-text-muted font-medium text-sm border-b-[3px] border-transparent hover:text-text-main hover:border-gray-200 transition-all">
+                            قیمت‌ها
+                            <span class="bg-red-100 text-red-600 text-[10px] px-1.5 py-0.5 rounded-full mr-2 align-middle">3</span>
+</button>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-4">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="relative flex-1 max-w-lg">
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 material-symbols-outlined text-xl">search</span>
+<input class="w-full pr-10 pl-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400" placeholder="جستجوی نام کالا، کد یا شناسه..." type="text"/>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-muted">
+<span>نمایش:</span>
+<select class="form-select bg-gray-50 border-gray-200 rounded-lg text-sm py-1.5 px-3 focus:border-primary focus:ring-primary cursor-pointer">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span>ردیف</span>
+</div>
+</div>
+<div class="h-px bg-gray-100 w-full"></div>
+<div class="flex flex-wrap items-center gap-6">
+<div class="relative group z-20">
+<button class="flex items-center gap-2 px-3 py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg text-sm text-text-main transition-colors">
+<span class="material-symbols-outlined text-lg text-text-muted">store</span>
+                                انتخاب شعب (ستون‌ها)
+                                <span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+<div class="absolute right-0 top-full mt-2 w-64 bg-white border border-gray-100 rounded-lg shadow-xl hidden group-hover:block p-3">
+<div class="flex items-center gap-2 mb-2 pb-2 border-b border-gray-50">
+<input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" id="all_branches" type="checkbox"/>
+<label class="text-sm font-bold text-text-main cursor-pointer" for="all_branches">همه شعب</label>
+</div>
+<div class="flex flex-col gap-2 max-h-40 overflow-y-auto">
+<label class="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-1.5 rounded">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox"/>
+<span class="text-sm text-text-main">شعبه مرکزی</span>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-1.5 rounded">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox"/>
+<span class="text-sm text-text-main">شعبه ونک</span>
+</div>
+<span class="text-[10px] bg-red-50 text-red-600 px-1.5 rounded">2</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-1.5 rounded">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox"/>
+<span class="text-sm text-text-main">شعبه ولیعصر</span>
+</div>
+<span class="text-[10px] bg-red-50 text-red-600 px-1.5 rounded">1</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-1.5 rounded">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox"/>
+<span class="text-sm text-text-main">شعبه تجریش</span>
+</div>
+<span class="text-[10px] bg-red-50 text-red-600 px-1.5 rounded">5</span>
+</label>
+</div>
+</div>
+</div>
+<label class="inline-flex items-center cursor-pointer gap-2 select-none">
+<input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox w-4 h-4" type="checkbox"/>
+<span class="text-sm text-text-main">فقط کالاهای فعال</span>
+</label>
+<div class="mr-auto flex items-center gap-3">
+<label class="inline-flex items-center cursor-pointer gap-3 select-none">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+<span class="text-sm font-medium text-text-main">فقط نمایش مغایرت‌ها</span>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden flex flex-col relative">
+<div class="overflow-x-auto custom-scrollbar pb-2">
+<table class="w-full text-sm text-right border-separate border-spacing-0">
+<thead class="bg-[#f8fcf9] text-text-muted sticky top-0 z-10">
+<tr>
+<th class="p-0 sticky right-0 z-20 w-12 border-b border-gray-200 bg-[#f8fcf9]">
+<div class="h-14 flex items-center justify-center border-l border-gray-200">
+<input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox w-4 h-4" type="checkbox"/>
+</div>
+</th>
+<th class="p-0 sticky right-12 z-20 min-w-[320px] max-w-[320px] border-b border-gray-200 bg-[#f8fcf9] shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<div class="h-14 flex items-center justify-between px-4 border-l border-gray-200 relative group">
+<span class="font-medium text-text-main">مشخصات کالا</span>
+<div class="resize-handle"></div>
+</div>
+</th>
+<th class="p-0 min-w-[140px] border-b border-gray-200 bg-[#f8fcf9]">
+<div class="h-14 flex flex-col justify-center items-center px-4 border-l border-gray-200 relative">
+<span class="font-bold text-text-main text-xs">قیمت مرجع</span>
+<span class="text-[10px] text-text-muted">(مرکز)</span>
+<div class="resize-handle"></div>
+</div>
+</th>
+<th class="p-0 min-w-[160px] border-b border-gray-200 bg-[#f8fcf9]">
+<div class="h-14 flex flex-col justify-center items-center px-4 border-l border-gray-200 relative group">
+<div class="flex items-center gap-1.5">
+<span class="font-medium text-text-main">شعبه ونک</span>
+</div>
+<span class="text-[10px] text-red-500 bg-red-50 px-1.5 rounded-full mt-0.5">2 خطا</span>
+<div class="resize-handle"></div>
+</div>
+</th>
+<th class="p-0 min-w-[160px] border-b border-gray-200 bg-[#f8fcf9]">
+<div class="h-14 flex flex-col justify-center items-center px-4 border-l border-gray-200 relative group">
+<span class="font-medium text-text-main">شعبه ولیعصر</span>
+<span class="text-[10px] text-gray-400 mt-0.5">بدون خطا</span>
+<div class="resize-handle"></div>
+</div>
+</th>
+<th class="p-0 min-w-[160px] border-b border-gray-200 bg-[#f8fcf9]">
+<div class="h-14 flex flex-col justify-center items-center px-4 border-l border-gray-200 relative group">
+<span class="font-medium text-text-main">شعبه تجریش</span>
+<span class="text-[10px] text-red-500 bg-red-50 px-1.5 rounded-full mt-0.5">5 خطا</span>
+<div class="resize-handle"></div>
+</div>
+</th>
+<th class="p-0 min-w-[160px] border-b border-gray-200 bg-[#f8fcf9]">
+<div class="h-14 flex flex-col justify-center items-center px-4 border-l border-gray-200 relative group">
+<span class="font-medium text-text-main">شعبه اصفهان</span>
+<span class="text-[10px] text-gray-400 mt-0.5">بدون خطا</span>
+<div class="resize-handle"></div>
+</div>
+</th>
+<th class="p-0 min-w-[100px] border-b border-gray-200 bg-[#f8fcf9]">
+<div class="h-14 flex items-center justify-center px-4 relative">
+<span class="font-medium text-text-main">عملیات</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50 bg-white">
+<tr class="hover:bg-gray-50 transition-colors group">
+<td class="sticky right-0 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50">
+<div class="h-16 flex items-center justify-center border-l border-gray-100">
+<input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox w-4 h-4" type="checkbox"/>
+</div>
+</td>
+<td class="sticky right-12 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<div class="h-16 flex items-center gap-3 px-4 border-l border-gray-100">
+<div class="size-10 rounded-lg bg-gray-100 border border-gray-200 shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdRwu-BtWrfn7QWkxP2c3DDDCnzp7wS2ylqjpNcJFT9Z4zDY2cxa1n87gV1nVQvB7i7KwCJdbM4u7OOjkk_ElHQa4CtQPXyFxPfRnq4uARPwwlkSix25NlGwxkLbtkeMEyWzhnUNumcFRqILKVOkbe1mqF24Vnuc3wkNJR7E9Gg0IDdRBb9bSUTVsKmnDjCjbvfK5VUuUZfprlhu4HUzK1bEtieIbE_VdesopgFiK0BfXhbiWeK4eLB7K0E-DX59wDFYAYtdNFdg'); background-size: cover;"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-bold text-text-main text-sm truncate">شیر کم‌چرب کاله</span>
+<span class="text-xs text-text-muted font-mono">DK-4821</span>
+</div>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100">
+<span class="font-bold text-text-main text-sm">450,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50 bg-red-50/30">
+<div class="h-16 flex flex-col justify-center items-center px-4 border-l border-gray-100 text-center">
+<span class="font-bold text-red-600 text-sm">420,000</span>
+<span class="text-[10px] text-red-500">مغایرت قیمت</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">450,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">450,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">450,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-2">
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-primary-light rounded-lg transition-colors" title="جزئیات بیشتر">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors group">
+<td class="sticky right-0 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50">
+<div class="h-16 flex items-center justify-center border-l border-gray-100">
+<input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox w-4 h-4" type="checkbox"/>
+</div>
+</td>
+<td class="sticky right-12 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<div class="h-16 flex items-center gap-3 px-4 border-l border-gray-100">
+<div class="size-10 rounded-lg bg-gray-100 border border-gray-200 shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbUoBzijbK_Y1eUUQO_SvleGfTcO05uitMpSWkPDF-f3wqrnmZ4k0czVFK_KtVGhWYi-MDBhbinK3RdJjaVtHBOGSwtuwc1klXYEyskJrP2Gb7pc0tKX4DkQT3Hjtozg0oMij9yaoZrJvam4SoER1FL2aVKujxMpN07Ztn9VHv0LOkMUYwJNm19iff8MkRShnHaNeXG0FkA1xNKtxO1gpK8HPECpvSl8bWQZ4yyOGBvzO26X9VUVOiBegN8UZFMILQtwBdIXb2gQ'); background-size: cover;"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-bold text-text-main text-sm truncate">ماست موسیر پگاه</span>
+<span class="text-xs text-text-muted font-mono">DK-1102</span>
+</div>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100">
+<span class="font-bold text-text-main text-sm">280,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">280,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50 bg-amber-50/30">
+<div class="h-16 flex flex-col justify-center items-center px-4 border-l border-gray-100 text-center">
+<span class="font-bold text-amber-600 text-sm">---</span>
+<span class="text-[10px] text-amber-600">ناموجود</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">280,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">280,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-2">
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-primary-light rounded-lg transition-colors" title="جزئیات بیشتر">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors group">
+<td class="sticky right-0 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50">
+<div class="h-16 flex items-center justify-center border-l border-gray-100">
+<input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox w-4 h-4" type="checkbox"/>
+</div>
+</td>
+<td class="sticky right-12 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<div class="h-16 flex items-center gap-3 px-4 border-l border-gray-100">
+<div class="size-10 rounded-lg bg-gray-100 border border-gray-200 shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5D8KwWVmP1XEfFmHRvwd8SzRKAuBy1xYp2B7j7Trus5LTdtzoM7F3m98J6aGw1k1n8Nq_gfIKdK8Xl_rHF2JCBpeN-DJWQkJ-wSrg1anEqOkbhC401gOt9BQMQQqfWQ1ff7I3S6X4q71TuFf4srzIq5WaNLNy8b2u1YiLd10TlPJxcxbKVyrLYHBXWNx5s_ivjdzmyUd56_d-T4Luuc0JgBoPS9aYAIZv16qX9soailnsgJnuOlNIs0QZ7kbvgEVmk-XxJUXkGw'); background-size: cover;"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-bold text-text-main text-sm truncate">نوشابه کوکا 1.5 لیتر</span>
+<span class="text-xs text-text-muted font-mono">DK-3301</span>
+</div>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100">
+<span class="font-bold text-text-main text-sm">32,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">32,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">32,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50 bg-red-50/30">
+<div class="h-16 flex flex-col justify-center items-center px-4 border-l border-gray-100 text-center">
+<span class="font-bold text-red-600 text-sm">30,000</span>
+<span class="text-[10px] text-red-500">مغایرت قیمت</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">32,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-2">
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-primary-light rounded-lg transition-colors" title="جزئیات بیشتر">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors group">
+<td class="sticky right-0 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50">
+<div class="h-16 flex items-center justify-center border-l border-gray-100">
+<input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox w-4 h-4" type="checkbox"/>
+</div>
+</td>
+<td class="sticky right-12 z-10 bg-white group-hover:bg-gray-50 border-b border-gray-50 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<div class="h-16 flex items-center gap-3 px-4 border-l border-gray-100">
+<div class="size-10 rounded-lg bg-gray-100 border border-gray-200 shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkP3nJ7TQA613cz9vFCS4SnEfNll2idjLpqYYRpAcRdnDp2_FMA_v0xH_bJKLRSEctCf0CqM_Uym-TxTglc2qfTI59JisE5Xu5_DNta3CU3EOT8jXDsI1umAN57MWk0wbYCxXTgDXBsPZjpg5kLcB_yKgfETSoG3YkShMH3ZYCV4-_5rwjxWjEWwEGSqJISauFIhQDrZ3PFu3bFr2cm7jKeWdU8vEOeYFL1hF9boIdzfiFFU0VVJOvTvbcXGsC6C0AFE4mOcuNPA'); background-size: cover;"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-bold text-text-main text-sm truncate">چیپس فلفلی</span>
+<span class="text-xs text-text-muted font-mono">DK-9921</span>
+</div>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100">
+<span class="font-bold text-text-main text-sm">35,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">35,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">35,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">35,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-4 border-l border-gray-100 text-center">
+<span class="font-medium text-text-main text-sm">35,000</span>
+</div>
+</td>
+<td class="border-b border-gray-50">
+<div class="h-16 flex items-center justify-center px-2">
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-primary-light rounded-lg transition-colors" title="جزئیات بیشتر">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-gray-100 flex items-center justify-between bg-gray-50/50">
+<div class="text-xs text-text-muted">
+                            نمایش <span class="font-bold text-text-main">1</span> تا <span class="font-bold text-text-main">4</span> از <span class="font-bold text-text-main">12</span> مغایرت
+                        </div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+<button class="size-8 flex items-center justify-center rounded-lg bg-primary text-primary-content text-sm font-bold shadow-sm">1</button>
+<button class="size-8 flex items-center justify-center rounded-lg hover:bg-gray-200 text-text-main text-sm font-medium transition-colors">2</button>
+<button class="size-8 flex items-center justify-center rounded-lg hover:bg-gray-200 text-text-main text-sm font-medium transition-colors">3</button>
+<span class="text-gray-400 text-sm">...</span>
+<button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

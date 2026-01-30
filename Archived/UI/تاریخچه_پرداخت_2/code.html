@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تاریخچه پرداخت | درخت هلو</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Vazirmatn for Persian support -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "primary-dark": "#0dbd47",
+                        "background-light": "#f8fcf9",
+                        "background-dark": "#102216",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a3322",
+                        "text-main-light": "#0d1b12",
+                        "text-main-dark": "#e0ece4",
+                        "text-secondary-light": "#4c9a66",
+                        "text-secondary-dark": "#8abf9d",
+                        "border-light": "#e7f3eb",
+                        "border-dark": "#2a4a35",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "body": ["Vazirmatn", "Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Vazirmatn', 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for better look in dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark antialiased overflow-hidden h-screen flex flex-row-reverse">
+<!-- Sidebar Navigation (RTL: Right Side) -->
+<aside class="w-72 h-full flex flex-col bg-surface-light dark:bg-surface-dark border-l border-border-light dark:border-border-dark overflow-y-auto shrink-0 transition-colors duration-200">
+<div class="p-6 flex flex-col gap-8 h-full">
+<!-- Brand -->
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-xl">
+<!-- Placeholder for Logo -->
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-red-500 shadow-sm" data-alt="Peach Tree Logo Gradient"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold text-text-main-light dark:text-text-main-dark">درخت هلو</h1>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">برنامه مدیریت شعب هلو</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main-light dark:text-text-main-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-medium text-sm">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main-light dark:text-text-main-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">storefront</span>
+<span class="font-medium text-sm">شعب</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main-light dark:text-text-main-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">bar_chart</span>
+<span class="font-medium text-sm">مدیریت مالی</span>
+</a>
+<!-- Active Link -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary border-r-4 border-primary" href="#">
+<span class="material-symbols-outlined text-primary-dark dark:text-primary font-variation-FILL-1">receipt_long</span>
+<span class="font-bold text-sm">تاریخچه پرداخت</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main-light dark:text-text-main-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">settings</span>
+<span class="font-medium text-sm">تنظیمات</span>
+</a>
+</nav>
+<!-- Bottom Actions -->
+<div class="mt-auto flex flex-col gap-4 pt-4 border-t border-border-light dark:border-border-dark">
+<!-- User Profile Mini -->
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Portrait of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPpbjlYpmpsyiCwnKTN7rLMZxXSg7rafU3VkgojH-pZAiMzf3U_ePeYxPfnzIZEPcqE8bPYBDFoF_FA0clqfmVshMHv690EHvQT48eQfyaZ4AigO81MdgH6u7Fs_ZCJBU7tTsJZ9oXo-ov4Fy8NWIuz99PsV-O9oHhSKs1Nqr1s_RlAbasNKNxOXyplNBzTYqz9xY-_EhLeSAU9RyCLwck5NiAk3lZsFTVRsdVQVCW9jMweIcm0Ho3CJytnYZk7IfykArZo2rl0Q");'></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-bold truncate text-text-main-light dark:text-text-main-dark">علی محمدی</span>
+<span class="text-xs truncate text-text-secondary-light dark:text-text-secondary-dark">مدیر ارشد</span>
+</div>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-4 bg-border-light dark:bg-border-dark text-text-main-light dark:text-text-main-dark hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20 dark:hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined text-lg">logout</span>
+<span class="text-sm font-bold">خروج</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Top Bar / Header -->
+<header class="w-full h-20 px-8 flex items-center justify-between shrink-0 bg-background-light dark:bg-background-dark z-10">
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl font-black text-text-main-light dark:text-text-main-dark tracking-tight">تاریخچه پرداخت</h1>
+<div class="flex items-center gap-2 text-xs text-text-secondary-light dark:text-text-secondary-dark">
+<span>خانه</span>
+<span class="material-symbols-outlined text-[10px]">chevron_left</span>
+<span>امور مالی</span>
+<span class="material-symbols-outlined text-[10px]">chevron_left</span>
+<span class="text-primary-dark dark:text-primary font-medium">تراکنش‌ها</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-text-secondary-light dark:text-text-secondary-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 left-2 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-background-dark"></span>
+</button>
+<button class="flex items-center gap-2 h-10 px-4 rounded-lg bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark shadow-sm hover:shadow transition-shadow text-sm font-bold">
+<span class="material-symbols-outlined text-lg text-green-600 dark:text-green-400">download</span>
+<span>خروجی اکسل</span>
+</button>
+</div>
+</header>
+<!-- Content Scroll Area -->
+<div class="flex-1 overflow-y-auto px-8 pb-8">
+<div class="max-w-[1200px] w-full mx-auto flex flex-col gap-6">
+<!-- Filters Section -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex flex-wrap items-end gap-4">
+<!-- Search Bar -->
+<div class="flex-1 min-w-[280px]">
+<label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-2">جستجو تراکنش</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute right-3 text-text-secondary-light dark:text-text-secondary-dark">search</span>
+<input class="w-full h-11 pr-10 pl-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:border-primary focus:ring-1 focus:ring-primary text-text-main-light dark:text-text-main-dark placeholder:text-gray-400 text-sm transition-all outline-none" placeholder="شماره تراکنش، نام شعبه..." type="text"/>
+</div>
+</div>
+<!-- Date Range -->
+<div class="flex gap-4 flex-wrap sm:flex-nowrap">
+<div class="w-full sm:w-40">
+<label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-2">از تاریخ</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:border-primary focus:ring-1 focus:ring-primary text-text-main-light dark:text-text-main-dark text-center text-sm outline-none" placeholder="۱۴۰۲/۰۱/۰۱" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-light dark:text-text-secondary-dark text-lg pointer-events-none">calendar_today</span>
+</div>
+</div>
+<div class="w-full sm:w-40">
+<label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-2">تا تاریخ</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:border-primary focus:ring-1 focus:ring-primary text-text-main-light dark:text-text-main-dark text-center text-sm outline-none" placeholder="۱۴۰۲/۱۲/۲۹" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-light dark:text-text-secondary-dark text-lg pointer-events-none">calendar_today</span>
+</div>
+</div>
+</div>
+<!-- Status Dropdown -->
+<div class="w-full sm:w-48">
+<label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-2">وضعیت</label>
+<div class="relative">
+<select class="appearance-none w-full h-11 pr-4 pl-10 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:border-primary focus:ring-1 focus:ring-primary text-text-main-light dark:text-text-main-dark text-sm outline-none cursor-pointer">
+<option>همه وضعیت‌ها</option>
+<option>پرداخت موفق</option>
+<option>ناموفق</option>
+<option>در انتظار</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-light dark:text-text-secondary-dark pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filter Button -->
+<button class="h-11 px-6 rounded-lg bg-primary text-black font-bold text-sm hover:bg-green-400 transition-colors shadow-sm flex items-center justify-center gap-2 min-w-[100px]">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+<span>اعمال</span>
+</button>
+</div>
+<!-- Quick Filters (Chips) -->
+<div class="flex gap-2 mt-4 overflow-x-auto pb-1 no-scrollbar">
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark py-1 pl-2 flex items-center">فیلترهای سریع:</span>
+<button class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary-dark dark:text-primary border border-primary/20 hover:bg-primary/20 transition-colors">امروز</button>
+<button class="px-3 py-1 rounded-full text-xs font-medium bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-light dark:border-border-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors">هفته گذشته</button>
+<button class="px-3 py-1 rounded-full text-xs font-medium bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-light dark:border-border-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors">تراکنش‌های بالا</button>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark">
+<th class="py-4 px-6 text-xs font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">شماره تراکنش</th>
+<th class="py-4 px-6 text-xs font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">تاریخ و زمان</th>
+<th class="py-4 px-6 text-xs font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">شعبه</th>
+<th class="py-4 px-6 text-xs font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">مبلغ (تومان)</th>
+<th class="py-4 px-6 text-xs font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">روش پرداخت</th>
+<th class="py-4 px-6 text-xs font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">وضعیت</th>
+<th class="py-4 px-6 text-xs font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider text-center">عملیات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<!-- Row 1 -->
+<tr class="group hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors">
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="font-mono text-sm font-medium text-text-main-light dark:text-text-main-dark">#TRX-9821</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-text-secondary-light dark:text-text-secondary-dark hover:text-primary">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-main-light dark:text-text-main-dark">۱۴۰۲/۰۸/۱۲</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">۱۴:۳۰</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm text-text-main-light dark:text-text-main-dark">شعبه مرکزی</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm font-bold text-text-main-light dark:text-text-main-dark">۵,۰۰۰,۰۰۰</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">credit_card</span>
+<span class="text-sm text-text-main-light dark:text-text-main-dark">درگاه اینترنتی</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                            پرداخت موفق
+                                        </span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap text-center">
+<button class="p-2 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-border-light dark:hover:bg-border-dark hover:text-primary transition-colors" title="مشاهده جزئیات">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors">
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="font-mono text-sm font-medium text-text-main-light dark:text-text-main-dark">#TRX-9820</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-text-secondary-light dark:text-text-secondary-dark hover:text-primary">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-main-light dark:text-text-main-dark">۱۴۰۲/۰۸/۱۲</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">۱۲:۱۵</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm text-text-main-light dark:text-text-main-dark">شعبه غرب</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm font-bold text-text-main-light dark:text-text-main-dark">۱,۲۵۰,۰۰۰</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">point_of_sale</span>
+<span class="text-sm text-text-main-light dark:text-text-main-dark">کارتخوان</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                            پرداخت موفق
+                                        </span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap text-center">
+<button class="p-2 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-border-light dark:hover:bg-border-dark hover:text-primary transition-colors" title="مشاهده جزئیات">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors">
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="font-mono text-sm font-medium text-text-main-light dark:text-text-main-dark">#TRX-9819</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-text-secondary-light dark:text-text-secondary-dark hover:text-primary">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-main-light dark:text-text-main-dark">۱۴۰۲/۰۸/۱۱</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">۱۸:۴۵</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm text-text-main-light dark:text-text-main-dark">شعبه بازار</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm font-bold text-text-main-light dark:text-text-main-dark">۳,۰۰۰,۰۰۰</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">qr_code</span>
+<span class="text-sm text-text-main-light dark:text-text-main-dark">کیف پول</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                                            ناموفق
+                                        </span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap text-center">
+<button class="p-2 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-border-light dark:hover:bg-border-dark hover:text-primary transition-colors" title="مشاهده جزئیات">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors">
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="font-mono text-sm font-medium text-text-main-light dark:text-text-main-dark">#TRX-9818</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-text-secondary-light dark:text-text-secondary-dark hover:text-primary">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-main-light dark:text-text-main-dark">۱۴۰۲/۰۸/۱۱</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">۰۹:۱۰</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm text-text-main-light dark:text-text-main-dark">شعبه مرکزی</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="text-sm font-bold text-text-main-light dark:text-text-main-dark">۸,۵۰۰,۰۰۰</span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">credit_card</span>
+<span class="text-sm text-text-main-light dark:text-text-main-dark">درگاه اینترنتی</span>
+</div>
+</td>
+<td class="py-4 px-6 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800">
+<span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
+                                            در انتظار
+                                        </span>
+</td>
+<td class="py-4 px-6 whitespace-nowrap text-center">
+<button class="p-2 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-border-light dark:hover:bg-border-dark hover:text-primary transition-colors" title="مشاهده جزئیات">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="bg-surface-light dark:bg-surface-dark px-6 py-4 border-t border-border-light dark:border-border-dark flex items-center justify-between">
+<div class="text-sm text-text-secondary-light dark:text-text-secondary-dark hidden sm:block">
+                            نمایش ۱ تا ۱۰ از ۱۲۸ تراکنش
+                        </div>
+<div class="flex gap-2">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-background-light dark:hover:bg-background-dark disabled:opacity-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-black font-bold text-sm shadow-sm">۱</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark hover:bg-background-light dark:hover:bg-background-dark text-sm transition-colors">۲</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark hover:bg-background-light dark:hover:bg-background-dark text-sm transition-colors">۳</button>
+<span class="w-9 h-9 flex items-center justify-center text-text-secondary-light dark:text-text-secondary-dark">...</span>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark hover:bg-background-light dark:hover:bg-background-dark text-sm transition-colors">۱۲</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-background-light dark:hover:bg-background-dark">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Theme Toggle (Floating) -->
+<button class="fixed bottom-6 left-6 w-12 h-12 rounded-full bg-text-main-light dark:bg-surface-light text-surface-light dark:text-surface-dark shadow-lg flex items-center justify-center z-50 hover:scale-105 transition-transform" onclick="document.documentElement.classList.toggle('dark')" title="تغییر تم">
+<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+</body></html>

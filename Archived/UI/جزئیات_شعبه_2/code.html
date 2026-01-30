@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>جزئیات شعبه - درخت هلو</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-dark": "#1a3323",
+                        "surface-border": "#23482f",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "sans": ["Vazirmatn", "Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #102216; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #23482f; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #326744; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex overflow-hidden font-display">
+<!-- Sidebar (Right) -->
+<aside class="w-72 bg-[#112217] border-l border-[#23482f] hidden lg:flex flex-col h-screen sticky top-0 shrink-0 z-30">
+<!-- Logo Section -->
+<div class="p-6 flex items-center gap-3 border-b border-[#23482f]/50">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 shadow-[0_0_15px_rgba(19,236,91,0.2)] border border-[#23482f]" data-alt="Peach Tree Logo - Abstract organic shape in green" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD15dH8tpAepVM6eLd7bQ9s10kTFldCZqXNwiv5nzD942ox8RRv-XL9Lb-bLJWjBPCekEv5SZZ9FvXDHD5qfOpCp1I_PFMEaQcHee3Mto3Rud364TjHSTyGoGyc_7sUZBxFE6aRCr4WWiN1pP4uk7QeqkUosdsEevNkA4fPYQVHPLC-LW9X9KZo5H9qG5bXNCWrNFkRc5OyIDZgM9f43-mkPZjV8H3mRm6LPLbjVDt2mb9Wpn2EX7Nmsxd47hVzuR9UHXcr5moXBQ");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-tight">درخت هلو</h1>
+<p class="text-[#92c9a4] text-xs font-normal leading-normal mt-1">برنامه مدیریت شعب هلو</p>
+</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-[#23482f] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">داشبورد</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#23482f] text-white shadow-lg shadow-[#000000]/20 transition-all" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-sm font-medium">شعب</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-[#23482f] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">group</span>
+<span class="text-sm font-medium">کاربران</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-[#23482f] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">assessment</span>
+<span class="text-sm font-medium">گزارشات</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#23482f]">
+<p class="px-4 text-xs text-[#92c9a4] mb-2 font-bold opacity-60">سیستم</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-[#23482f] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">تنظیمات</span>
+</a>
+</div>
+</nav>
+<!-- User Footer -->
+<div class="p-4 border-t border-[#23482f] bg-[#0d1a12]">
+<button class="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-[#23482f] transition-colors">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-xs font-bold text-white">مدیر سیستم</span>
+<span class="text-[10px] text-[#92c9a4]">admin@holoo.ir</span>
+</div>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden relative w-full">
+<!-- Top Navbar -->
+<header class="h-16 border-b border-[#23482f] flex items-center justify-between px-6 bg-[#112217] sticky top-0 z-20 shadow-sm">
+<div class="flex items-center gap-4 text-white">
+<button class="lg:hidden p-1 rounded-md hover:bg-[#23482f]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="h-8 w-px bg-[#23482f] mx-2 hidden lg:block"></div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">جزئیات شعبه</h2>
+</div>
+<div class="flex items-center gap-3">
+<!-- Apply Preview Button -->
+<button class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-primary/30 text-primary bg-primary/5 hover:bg-primary/10 transition-colors text-xs font-bold tracking-wide">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                    پیش‌نمایش تغییرات
+                </button>
+<div class="h-6 w-px bg-[#23482f] mx-2"></div>
+<!-- Action Icons -->
+<button class="flex items-center justify-center size-10 rounded-lg hover:bg-[#23482f] text-[#92c9a4] hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg hover:bg-[#23482f] text-[#92c9a4] hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg hover:bg-[#23482f] text-[#92c9a4] hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Page Content -->
+<main class="flex-1 overflow-y-auto p-4 md:p-8 lg:px-12 scrollbar-thin">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-xs text-[#92c9a4]">
+<a class="hover:text-primary transition-colors" href="#">خانه</a>
+<span class="material-symbols-outlined text-[10px]">chevron_left</span>
+<a class="hover:text-primary transition-colors" href="#">مدیریت شعب</a>
+<span class="material-symbols-outlined text-[10px]">chevron_left</span>
+<span class="text-white font-medium">شعبه مرکزی</span>
+</div>
+<!-- Branch Header Card -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-[#1a3323] p-6 rounded-xl border border-[#23482f] relative overflow-hidden group">
+<!-- Decorational background glow -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="flex items-start gap-5 relative z-10">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-24 md:size-28 shadow-lg border border-[#326744]" data-alt="Modern office building representing the central branch" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClilq6OWGvRiGv1ltg2EewHzjPB6DytNn7jYCNUocnygDm1x1R2i4TY2SyOSRfPMHSqsmoK1X4uYui1PFwr4lZnBYZr5CJkQFZA_CQUpGmsm0zZF5DXiCQjnczen1FbjcZQrYDiMHwa9PnKulPVJLt8h-rxc96uFPOZPNZfwNJW0hRwrIraSaDH4T46thkB0IYjM1mjVMBjKrCmXhFLf9Hyf-PrcADPHz-3L1DOjxLsBlOmvklJOyUWHWoAH-2Tdwee9OyTxX2qQ");'></div>
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center gap-3 flex-wrap">
+<h2 class="text-white text-2xl font-bold tracking-tight">شعبه مرکزی - تهران</h2>
+<span class="px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20 text-xs font-bold flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                                    فعال
+                                </span>
+</div>
+<p class="text-[#92c9a4] text-sm font-normal">کد شعبه: <span class="font-mono text-white">1024-THR</span> | نوع: <span class="text-white">اداری - تجاری</span></p>
+<div class="flex items-center gap-1 text-[#92c9a4] text-xs mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>تهران، میدان ونک، خیابان ملاصدرا، پلاک ۴۲</span>
+</div>
+</div>
+</div>
+<div class="flex w-full md:w-auto gap-3 relative z-10">
+<button class="flex-1 md:flex-none h-10 px-5 rounded-lg border border-[#23482f] bg-[#112217] text-white hover:bg-[#23482f] transition-all text-sm font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">block</span>
+                            غیرفعال سازی
+                        </button>
+<button class="flex-1 md:flex-none h-10 px-6 rounded-lg bg-primary text-[#112217] hover:bg-[#0bda43] transition-all text-sm font-bold shadow-[0_0_15px_rgba(19,236,91,0.15)] hover:shadow-[0_0_20px_rgba(19,236,91,0.3)] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                            ویرایش
+                        </button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="w-full overflow-x-auto pb-1">
+<div class="flex border-b border-[#23482f] gap-8 min-w-max">
+<button class="group flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-3 px-2 transition-all">
+<p class="text-white group-hover:text-primary text-sm font-bold tracking-wide">کلیات</p>
+</button>
+<button class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-[#326744] pb-3 px-2 transition-all">
+<p class="text-[#92c9a4] group-hover:text-white text-sm font-bold tracking-wide">نماینده و اتصال</p>
+</button>
+<button class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-[#326744] pb-3 px-2 transition-all">
+<p class="text-[#92c9a4] group-hover:text-white text-sm font-bold tracking-wide">انبارها</p>
+</button>
+<button class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-[#326744] pb-3 px-2 transition-all">
+<p class="text-[#92c9a4] group-hover:text-white text-sm font-bold tracking-wide">وقایع‌نگار</p>
+</button>
+</div>
+</div>
+<!-- Tab Content: Overview -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in">
+<!-- Left Column: Stats & Chart -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Stats Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-3 rounded-xl p-5 bg-[#1a3323] border border-[#23482f] hover:border-[#326744] transition-colors relative overflow-hidden">
+<div class="flex justify-between items-start">
+<div class="p-2 rounded-lg bg-[#23482f] text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-primary bg-primary/10 px-2 py-1 rounded text-xs font-bold">+۵٪</span>
+</div>
+<div>
+<p class="text-[#92c9a4] text-sm font-medium mb-1">فروش ماهانه</p>
+<p class="text-white text-2xl font-bold tracking-tight">۱,۲۵۰,۰۰۰,۰۰۰ <span class="text-sm font-normal text-[#92c9a4]">ریال</span></p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl p-5 bg-[#1a3323] border border-[#23482f] hover:border-[#326744] transition-colors">
+<div class="flex justify-between items-start">
+<div class="p-2 rounded-lg bg-[#23482f] text-blue-400">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<span class="text-[#92c9a4] bg-[#23482f] px-2 py-1 rounded text-xs font-bold">بدون تغییر</span>
+</div>
+<div>
+<p class="text-[#92c9a4] text-sm font-medium mb-1">تعداد پرسنل</p>
+<p class="text-white text-2xl font-bold tracking-tight">۱۲ <span class="text-sm font-normal text-[#92c9a4]">نفر</span></p>
+</div>
+</div>
+</div>
+<!-- Chart Section -->
+<div class="rounded-xl p-6 bg-[#1a3323] border border-[#23482f] flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="text-white font-bold text-base flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">trending_up</span>
+                                    نمودار تراکنش‌ها
+                                </h3>
+<select class="bg-[#112217] border border-[#23482f] text-white text-xs rounded-lg px-3 py-1.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+<option>۳۰ روز گذشته</option>
+<option>۷ روز گذشته</option>
+</select>
+</div>
+<!-- Visual Chart Representation (CSS Only) -->
+<div class="relative h-48 w-full flex items-end justify-between px-2 gap-2">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full h-px bg-white border-t border-dashed"></div>
+<div class="w-full h-px bg-white border-t border-dashed"></div>
+<div class="w-full h-px bg-white border-t border-dashed"></div>
+<div class="w-full h-px bg-white border-t border-dashed"></div>
+</div>
+<!-- Bars -->
+<div class="w-full bg-[#23482f] hover:bg-[#326744] h-[30%] rounded-t-sm transition-all duration-300 relative group">
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">۲۰ م</div>
+</div>
+<div class="w-full bg-[#23482f] hover:bg-[#326744] h-[50%] rounded-t-sm transition-all duration-300 relative group">
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">۳۵ م</div>
+</div>
+<div class="w-full bg-[#23482f] hover:bg-[#326744] h-[45%] rounded-t-sm transition-all duration-300 relative group"></div>
+<div class="w-full bg-primary/80 hover:bg-primary h-[80%] rounded-t-sm transition-all duration-300 shadow-[0_0_15px_rgba(19,236,91,0.3)] relative group">
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">۵۵ م</div>
+</div>
+<div class="w-full bg-[#23482f] hover:bg-[#326744] h-[60%] rounded-t-sm transition-all duration-300 relative group"></div>
+<div class="w-full bg-[#23482f] hover:bg-[#326744] h-[40%] rounded-t-sm transition-all duration-300 relative group"></div>
+<div class="w-full bg-[#23482f] hover:bg-[#326744] h-[65%] rounded-t-sm transition-all duration-300 relative group"></div>
+<div class="w-full bg-[#23482f] hover:bg-[#326744] h-[55%] rounded-t-sm transition-all duration-300 relative group"></div>
+</div>
+<!-- X Axis Labels -->
+<div class="flex justify-between text-[10px] text-[#92c9a4] px-1 font-mono">
+<span>01</span><span>05</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Details & Agent Info -->
+<div class="flex flex-col gap-6">
+<!-- Manager Info -->
+<div class="bg-[#1a3323] border border-[#23482f] rounded-xl p-6">
+<h3 class="text-white font-bold text-sm mb-4 border-b border-[#23482f] pb-3">اطلاعات مدیر شعبه</h3>
+<div class="flex items-center gap-4 mb-5">
+<div class="size-14 rounded-full bg-center bg-cover bg-no-repeat border-2 border-[#23482f]" data-alt="Manager Portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSYsIW8vp4z7_flamK_-af1Dt-yJqy9MrqxqMhLyjAVxiVIFYOPkI5ZPWYNxoU7VSl_9cPON2zqwhpf0AToMkWiRj-5X2mT31RvhWbTjO0jCLjVPDJpRFEmiioj17-jJGyqJ-f6o40SD7C4JWYavhWKjSSqIFbh63nRpkTuLvJkUKmDhByhXxuzGyZtDaQ1E8o-xTNe53F_ZCtWV-Tn7E9GbdRc_7B9JF9rzbOIdFlLcpjdo9qligu5zewHMEDBCO7atcYB3TfhA");'></div>
+<div>
+<p class="text-white font-bold text-base">علی محمدی</p>
+<p class="text-[#92c9a4] text-xs mt-1">مدیر ارشد فروش</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-[#92c9a4] text-xs">شماره تماس</span>
+<span class="text-white text-sm font-mono dir-ltr">0912 345 6789</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[#92c9a4] text-xs">پست الکترونیک</span>
+<span class="text-white text-sm font-mono">ali.m@holoo.ir</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[#92c9a4] text-xs">آخرین بازدید</span>
+<span class="text-white text-sm">۲ ساعت پیش</span>
+</div>
+</div>
+<button class="w-full mt-5 py-2 rounded-lg border border-[#23482f] text-white hover:bg-[#23482f] text-xs font-bold transition-colors">
+                                مشاهده پروفایل کامل
+                            </button>
+</div>
+<!-- Connection Status -->
+<div class="bg-[#1a3323] border border-[#23482f] rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+<h3 class="text-white font-bold text-sm mb-4">وضعیت اتصال نماینده</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-[#112217] border border-[#23482f]">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary shadow-[0_0_8px_#13ec5b]"></div>
+<span class="text-white text-sm font-medium">وضعیت سرور</span>
+</div>
+<span class="text-primary text-xs font-bold">متصل</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 rounded-lg bg-[#112217] border border-[#23482f]">
+<p class="text-[#92c9a4] text-[10px] mb-1">Ping (ms)</p>
+<p class="text-white font-mono font-bold text-lg">24</p>
+</div>
+<div class="p-3 rounded-lg bg-[#112217] border border-[#23482f]">
+<p class="text-[#92c9a4] text-[10px] mb-1">Uptime</p>
+<p class="text-white font-mono font-bold text-lg">99.9%</p>
+</div>
+</div>
+<div class="mt-2 pt-3 border-t border-[#23482f]">
+<div class="flex justify-between items-center text-xs">
+<span class="text-[#92c9a4]">نسخه نماینده</span>
+<span class="text-white font-mono">v4.2.1-stable</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-4 flex justify-end pb-8">
+<button class="bg-primary hover:bg-[#0bda43] text-[#112217] text-base font-bold py-3 px-8 rounded-xl shadow-[0_0_25px_rgba(19,236,91,0.25)] hover:shadow-[0_0_35px_rgba(19,236,91,0.4)] transition-all transform hover:-translate-y-1 flex items-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                        اعمال تغییرات
+                     </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

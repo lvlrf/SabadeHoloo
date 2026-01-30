@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأیید کد یکبار مصرف</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#007fff",
+                "background-light": "#f5f7f8",
+                "background-dark": "#0f1923",
+                },
+                fontFamily: {
+                "display": ["Inter", "Noto Sans Arabic", "sans-serif"],
+                "sans": ["Inter", "Noto Sans Arabic", "sans-serif"],
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles to hide number input spinners */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex flex-col items-center justify-center p-4 transition-colors duration-200">
+<!-- Main Card Container -->
+<main class="w-full max-w-[480px] bg-white dark:bg-[#1a2634] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none overflow-hidden border border-slate-100 dark:border-slate-800 relative">
+<!-- Decorative Top Bar -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/60 to-primary"></div>
+<div class="p-8 md:p-10 flex flex-col gap-8">
+<!-- Header Section -->
+<div class="flex flex-col items-center text-center gap-4">
+<!-- Logo / Icon -->
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-[32px]">lock_person</span>
+</div>
+<div class="flex flex-col gap-2">
+<h1 class="text-[#101418] dark:text-white text-2xl md:text-3xl font-bold leading-tight">
+                        تأیید هویت
+                    </h1>
+<div class="text-[#5e758d] dark:text-slate-400 text-sm font-normal leading-normal max-w-xs mx-auto">
+<p>کد ۶ رقمی ارسال شده به شماره زیر را وارد کنید.</p>
+<div class="mt-2 flex items-center justify-center gap-2 bg-slate-50 dark:bg-slate-800/50 py-1.5 px-3 rounded-full w-fit mx-auto border border-slate-100 dark:border-slate-700">
+<span class="font-medium text-slate-700 dark:text-slate-300 dir-ltr font-mono text-base">0912 345 6789</span>
+<button class="text-primary hover:text-primary/80 flex items-center justify-center" title="ویرایش شماره">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Section -->
+<div class="flex justify-center w-full">
+<!-- dir="ltr" is essential for correct input order (1->6) even in RTL pages -->
+<fieldset class="flex gap-2 sm:gap-3" dir="ltr">
+<input autofocus="" class="w-10 h-12 sm:w-12 sm:h-14 text-center text-xl font-semibold rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0f1923] text-slate-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder-slate-300 dark:placeholder-slate-600" maxlength="1" placeholder="-" type="number"/>
+<input class="w-10 h-12 sm:w-12 sm:h-14 text-center text-xl font-semibold rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0f1923] text-slate-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder-slate-300 dark:placeholder-slate-600" maxlength="1" placeholder="-" type="number"/>
+<input class="w-10 h-12 sm:w-12 sm:h-14 text-center text-xl font-semibold rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0f1923] text-slate-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder-slate-300 dark:placeholder-slate-600" maxlength="1" placeholder="-" type="number"/>
+<input class="w-10 h-12 sm:w-12 sm:h-14 text-center text-xl font-semibold rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0f1923] text-slate-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder-slate-300 dark:placeholder-slate-600" maxlength="1" placeholder="-" type="number"/>
+<input class="w-10 h-12 sm:w-12 sm:h-14 text-center text-xl font-semibold rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0f1923] text-slate-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder-slate-300 dark:placeholder-slate-600" maxlength="1" placeholder="-" type="number"/>
+<input class="w-10 h-12 sm:w-12 sm:h-14 text-center text-xl font-semibold rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0f1923] text-slate-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder-slate-300 dark:placeholder-slate-600" maxlength="1" placeholder="-" type="number"/>
+</fieldset>
+</div>
+<!-- Timer & Actions -->
+<div class="flex flex-col gap-6">
+<!-- Action Button -->
+<button class="w-full flex items-center justify-center h-12 rounded-lg bg-primary hover:bg-primary/90 text-white text-base font-bold tracking-wide transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-[#1a2634]">
+<span>تأیید و ادامه</span>
+<span class="material-symbols-outlined mr-2 text-[20px]">arrow_back</span>
+</button>
+<!-- Timer / Resend Section -->
+<div class="flex flex-col items-center gap-3">
+<!-- Active Timer State -->
+<div class="flex items-center gap-2 text-[#5e758d] dark:text-slate-400 text-sm font-medium bg-slate-50 dark:bg-slate-800/50 px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span>ارسال مجدد کد در</span>
+<span class="font-mono text-primary font-bold dir-ltr">01:59</span>
+</div>
+<!-- Fallback Options (Would typically appear when timer hits 0) -->
+<!-- Uncomment to see styling for active links state -->
+<!-- 
+                    <div class="flex gap-4 text-sm font-medium">
+                        <button class="text-primary hover:text-primary/80 underline decoration-2 decoration-transparent hover:decoration-current underline-offset-4 transition-all">
+                            ارسال مجدد پیامک
+                        </button>
+                        <span class="text-slate-300 dark:text-slate-600">|</span>
+                        <button class="text-primary hover:text-primary/80 underline decoration-2 decoration-transparent hover:decoration-current underline-offset-4 transition-all">
+                            تماس صوتی
+                        </button>
+                    </div> 
+                    -->
+</div>
+</div>
+<!-- Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+<span class="flex-shrink-0 mx-4 text-slate-400 dark:text-slate-500 text-xs uppercase">یا</span>
+<div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+</div>
+<!-- Footer Link -->
+<div class="text-center">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">vpn_key</span>
+                    ورود با رمز عبور
+                </a>
+</div>
+</div>
+<!-- Bottom progress bar visual (optional modern touch) -->
+<div class="h-1 w-1/3 bg-primary/20 dark:bg-primary/10 mx-auto rounded-full mb-4"></div>
+</main>
+<!-- Language/Theme Toggle (Example for completeness) -->
+<div class="fixed bottom-6 flex gap-4">
+<button aria-label="Toggle theme" class="p-2 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<!-- Just a visual placeholder for theme toggle -->
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+<!-- Script for Input Focus Logic -->
+<script>
+        // Simple logic to handle auto-focus for the OTP inputs
+        const inputs = document.querySelectorAll('fieldset input');
+        
+        inputs.forEach((input, index) => {
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    inputs[index - 1].focus();
+                }
+                if (e.key === 'ArrowLeft' && index > 0) {
+                    inputs[index - 1].focus();
+                    setTimeout(() => inputs[index - 1].setSelectionRange(1, 1), 0);
+                }
+                if (e.key === 'ArrowRight' && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+
+            input.addEventListener('input', (e) => {
+                const value = e.target.value;
+                if (value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+
+            // Handle paste
+            input.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pasteData = e.clipboardData.getData('text').slice(0, inputs.length);
+                if (/^\d+$/.test(pasteData)) {
+                    [...pasteData].forEach((digit, i) => {
+                        if (inputs[i]) inputs[i].value = digit;
+                    });
+                    if (inputs[pasteData.length]) {
+                        inputs[pasteData.length].focus();
+                    } else {
+                        inputs[inputs.length - 1].focus();
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>

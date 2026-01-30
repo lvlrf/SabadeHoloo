@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأیید کد یکبارمصرف - درخت هلو</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Vazirmatn:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "primary-dark": "#0fb846",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a3525",
+                        "text-main": "#0d1b12",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"],
+                        "mono": ["Inter", "monospace"], // For OTP inputs
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 min-h-screen flex flex-col items-center justify-center p-4 transition-colors duration-300">
+<div class="w-full max-w-[460px] bg-surface-light dark:bg-surface-dark rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden relative">
+<div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary/60 via-primary to-primary/60"></div>
+<div class="px-8 pt-10 pb-8 flex flex-col items-center">
+<div class="flex flex-col items-center gap-4 mb-8">
+<div class="relative w-16 h-16 flex items-center justify-center bg-[#e7f3eb] dark:bg-[#2a4535] rounded-2xl shadow-inner">
+<svg class="text-primary-dark dark:text-primary" fill="none" height="40" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 21V11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M12 11C15.3137 11 18 8.31371 18 5C18 3.34315 16.6569 2 15 2C13.3431 2 12 3.34315 12 5C12 3.34315 10.6569 2 9 2C7.34315 2 6 3.34315 6 5C6 8.31371 8.68629 11 12 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M12 14C10 14 8 15 7 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle class="dark:fill-white" cx="15" cy="8" fill="#ffffff" r="2.5"></circle> 
+</svg>
+</div>
+<div class="text-center">
+<h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">درخت هلو</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">برنامه مدیریت شعب هلو</p>
+</div>
+</div>
+<div class="text-center mb-8 space-y-2">
+<h2 class="text-2xl font-bold text-text-main dark:text-white">تأیید کد یکبارمصرف</h2>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-[80%] mx-auto">
+                    کد ارسال شده به شماره <span class="font-mono font-bold text-text-main dark:text-gray-200" dir="ltr">0912***1234</span> را وارد کنید.
+                </p>
+</div>
+<div class="w-full mb-8">
+<form class="flex justify-center gap-2 sm:gap-3" dir="ltr">
+<input autofocus="" class="w-12 h-14 sm:w-14 sm:h-16 text-center text-2xl font-mono font-semibold bg-gray-50 dark:bg-[#152a1d] border border-gray-200 dark:border-[#2a4535] rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-300 dark:text-white" maxlength="1" placeholder="-" type="number"/>
+<input class="w-12 h-14 sm:w-14 sm:h-16 text-center text-2xl font-mono font-semibold bg-gray-50 dark:bg-[#152a1d] border border-gray-200 dark:border-[#2a4535] rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-300 dark:text-white" maxlength="1" placeholder="-" type="number"/>
+<input class="w-12 h-14 sm:w-14 sm:h-16 text-center text-2xl font-mono font-semibold bg-gray-50 dark:bg-[#152a1d] border border-gray-200 dark:border-[#2a4535] rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-300 dark:text-white" maxlength="1" placeholder="-" type="number"/>
+<input class="w-12 h-14 sm:w-14 sm:h-16 text-center text-2xl font-mono font-semibold bg-gray-50 dark:bg-[#152a1d] border border-gray-200 dark:border-[#2a4535] rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-300 dark:text-white" maxlength="1" placeholder="-" type="number"/>
+<input class="w-12 h-14 sm:w-14 sm:h-16 text-center text-2xl font-mono font-semibold bg-gray-50 dark:bg-[#152a1d] border border-gray-200 dark:border-[#2a4535] rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-300 dark:text-white" maxlength="1" placeholder="-" type="number"/>
+</form>
+</div>
+<div class="flex items-center justify-center gap-2 mb-8 bg-[#f8fcf9] dark:bg-[#152a1d]/50 px-4 py-2 rounded-lg border border-dashed border-[#cfe7d7] dark:border-[#2a4535]">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="text-sm font-medium text-text-main dark:text-gray-300 font-mono" dir="ltr">01:59</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">تا دریافت مجدد کد</span>
+</div>
+<button class="w-full bg-primary hover:bg-[#0fb846] text-[#0d1b12] font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
+<span>تأیید و ورود</span>
+<span class="material-symbols-outlined text-xl transition-transform group-hover:-translate-x-1">arrow_back</span>
+</button>
+<div class="mt-6 flex flex-col items-center gap-4">
+<button class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+<span>اصلاح شماره موبایل</span>
+</button>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#152a1d] px-8 py-4 flex justify-between items-center text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-gray-800">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                امنیت با درخت هلو
+            </span>
+<a class="hover:text-primary transition-colors" href="#">نیاز به راهنمایی دارید؟</a>
+</div>
+</div>
+<div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[300px] h-[300px] bg-primary/10 rounded-full blur-3xl"></div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach((input, index) => {
+                input.addEventListener('keydown', (e) => {
+                    if (e.key >= 0 && e.key <= 9) {
+                        input.value = '';
+                    }
+                });
+                input.addEventListener('input', (e) => {
+                    if (input.value.length === 1) {
+                        if (index < inputs.length - 1) {
+                            inputs[index + 1].focus();
+                        }
+                    }
+                });
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && input.value === '') {
+                        if (index > 0) {
+                            inputs[index - 1].focus();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

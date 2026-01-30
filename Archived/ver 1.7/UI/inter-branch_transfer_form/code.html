@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>فرم انتقال بین شعبه‌ای - داشبورد ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b8cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Vazirmatn", "Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111418] dark:text-gray-100 antialiased overflow-hidden selection:bg-primary/20 selection:text-primary">
+<div class="flex h-screen w-full">
+<aside class="w-64 bg-white dark:bg-[#1A2633] border-l border-[#f0f2f4] dark:border-gray-800 flex-col hidden lg:flex h-full transition-colors duration-200">
+<div class="p-6 border-b border-[#f0f2f4] dark:border-gray-800 flex items-center gap-3">
+<div class="size-8 rounded bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-base font-bold leading-tight">نکسوس ERP</h1>
+<p class="text-[#617589] dark:text-gray-400 text-xs">نسخه چند شعبه‌ای</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-gray-800 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">نمای کلی</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined fill-1">inventory_2</span>
+<p class="text-sm font-bold">موجودی کالا</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-gray-800 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">trending_up</span>
+<p class="text-sm font-medium">فروش</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-gray-800 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+<p class="text-sm font-medium">خرید</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-gray-800 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">account_balance</span>
+<p class="text-sm font-medium">حسابداری</p>
+</div>
+<div class="mt-6 px-3">
+<p class="text-xs font-semibold text-[#617589] dark:text-gray-500 uppercase tracking-wider mb-2">تنظیمات</p>
+<div class="flex items-center gap-3 py-2 text-[#617589] dark:text-gray-400 hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<p class="text-sm font-medium">پیکربندی</p>
+</div>
+<div class="flex items-center gap-3 py-2 text-[#617589] dark:text-gray-400 hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<p class="text-sm font-medium">کاربران و نقش‌ها</p>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-[#f0f2f4] dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="User profile picture showing a professional headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1QcN_5UyWICOz6hHQ9e5qckJE2yd-_WzhE-NmoHOzQtSpH9kNtIfdVjcxK_aLOvZ1575R37HQxijXdkuQKzuukalTRcnLV-xoYDs-0gY60LE5VrQfqigZFBGmzF085Xers1L68uIVJUgiNcIpNDlWx11gGROWhErk1WwRRwaRyuSzeQ4G62n4RDAZ0fBBzYjiN2cemOf5hX9k2f4G3No1pNS7BmgGBc2nPb8bKqk6-3CZLhF1qj3zsej4abY60_P9w19bB86jvM9f");'>
+</div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-[#111418] dark:text-white text-sm font-bold truncate">الکس مورگان</p>
+<p class="text-[#617589] dark:text-gray-400 text-xs truncate">مدیر تدارکات</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full min-w-0 bg-background-light dark:bg-background-dark relative">
+<header class="h-16 flex items-center justify-between px-6 bg-white dark:bg-[#1A2633] border-b border-[#f0f2f4] dark:border-gray-800 flex-shrink-0 z-10">
+<div class="flex items-center gap-4 lg:hidden">
+<button class="text-[#111418] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-bold text-[#111418] dark:text-white">نکسوس ERP</h2>
+</div>
+<div class="hidden lg:flex w-full max-w-lg">
+<div class="relative w-full">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#617589] dark:text-gray-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full bg-[#f0f2f4] dark:bg-gray-800 border-none rounded-lg py-2 pr-10 pl-4 text-sm text-[#111418] dark:text-white placeholder-[#617589] focus:ring-2 focus:ring-primary/50" placeholder="جستجوی سفارش‌ها، محصولات یا مشتریان..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-[#617589] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-gray-700 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 left-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#1A2633]"></span>
+</button>
+<button class="p-2 text-[#617589] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-gray-700 rounded-full transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-6 pb-12">
+<nav class="flex text-sm text-[#617589] dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">خانه</a>
+<span class="mx-2">/</span>
+<a class="hover:text-primary transition-colors" href="#">موجودی</a>
+<span class="mx-2">/</span>
+<span class="text-[#111418] dark:text-gray-200 font-medium">انتقال بین شعبه‌ای</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-[#111418] dark:text-white">انتقال جدید</h1>
+<div class="flex items-center gap-2 text-[#617589] dark:text-gray-400 text-sm md:text-base">
+<span>مرجع: <span class="font-mono text-[#111418] dark:text-gray-200 font-medium" dir="ltr">#TRF-2023-001</span></span>
+<span class="h-4 w-px bg-gray-300 dark:bg-gray-700"></span>
+<span>تاریخ: ۲ آبان ۱۴۰۲</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 h-10 rounded-lg bg-white dark:bg-gray-800 border border-[#f0f2f4] dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-[#111418] dark:text-white text-sm font-bold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>چاپ سفارش</span>
+</button>
+<div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 px-4">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+<span class="text-sm font-bold">حالت پیش‌نویس</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1A2633] rounded-xl p-6 shadow-sm border border-[#f0f2f4] dark:border-gray-800">
+<div class="relative flex items-center justify-between w-full">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-full h-1 bg-[#f0f2f4] dark:bg-gray-700 -z-0"></div>
+<div class="relative z-10 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white ring-4 ring-white dark:ring-[#1A2633] shadow-md transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</div>
+<span class="text-sm font-bold text-[#111418] dark:text-white bg-white dark:bg-[#1A2633] px-2 rounded">پیش‌نویس</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-10 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 ring-4 ring-white dark:ring-[#1A2633] transition-colors">
+<span class="material-symbols-outlined text-[20px] mirror-rtl">send</span>
+</div>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-[#1A2633] px-2 rounded">ارسال شده</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-10 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 ring-4 ring-white dark:ring-[#1A2633] transition-colors">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-[#1A2633] px-2 rounded">بررسی</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-10 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 ring-4 ring-white dark:ring-[#1A2633] transition-colors">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-[#1A2633] px-2 rounded">تایید شده</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-3 bg-white dark:bg-[#1A2633] rounded-xl shadow-sm border border-[#f0f2f4] dark:border-gray-800 overflow-hidden">
+<div class="p-6 border-b border-[#f0f2f4] dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-800/30">
+<h3 class="text-lg font-bold text-[#111418] dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+                                جزئیات حمل و نقل
+                            </h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-[#111418] dark:text-gray-200">انبار مبدأ</label>
+<div class="relative">
+<select class="w-full h-11 pr-4 pl-10 rounded-lg bg-[#f0f2f4] dark:bg-gray-800 border-none text-[#111418] dark:text-white text-sm focus:ring-2 focus:ring-primary/50 appearance-none">
+<option>انبار اصلی (مرکزی)</option>
+<option>مرکز توزیع شمال</option>
+<option>هاب ساحل شرقی</option>
+</select>
+<div class="absolute inset-y-0 left-0 flex items-center px-3 pointer-events-none text-[#617589]">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-500 pr-1">محل تامین موجودی</p>
+</div>
+<div class="flex justify-center items-center md:pt-6">
+<div class="size-10 rounded-full bg-[#f0f2f4] dark:bg-gray-700 flex items-center justify-center text-[#617589] dark:text-gray-400">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-[#111418] dark:text-gray-200">شعبه مقصد</label>
+<div class="relative">
+<select class="w-full h-11 pr-4 pl-10 rounded-lg bg-[#f0f2f4] dark:bg-gray-800 border-none text-[#111418] dark:text-white text-sm focus:ring-2 focus:ring-primary/50 appearance-none">
+<option disabled="" selected="">انتخاب شعبه...</option>
+<option>شعبه خرده‌فروشی - مرکز شهر</option>
+<option>شعبه خرده‌فروشی - فرودگاه</option>
+<option>فروشگاه موقت - مرکز خرید</option>
+</select>
+<div class="absolute inset-y-0 left-0 flex items-center px-3 pointer-events-none text-[#617589]">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-500 pr-1">محل دریافت کالا</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-6">
+<div class="bg-white dark:bg-[#1A2633] rounded-xl shadow-sm border border-[#f0f2f4] dark:border-gray-800 p-4">
+<div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+<div class="flex-1 w-full flex flex-col gap-2">
+<label class="text-sm font-medium text-[#111418] dark:text-gray-200">جستجوی محصول</label>
+<div class="relative group">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-[#617589] group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-11 pr-10 pl-4 rounded-lg bg-[#f0f2f4] dark:bg-gray-800 border-none text-[#111418] dark:text-white text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-gray-400" placeholder="نام، کد کالا یا اسکن بارکد..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-32 flex flex-col gap-2">
+<label class="text-sm font-medium text-[#111418] dark:text-gray-200">تعداد</label>
+<input class="w-full h-11 px-4 rounded-lg bg-[#f0f2f4] dark:bg-gray-800 border-none text-[#111418] dark:text-white text-sm focus:ring-2 focus:ring-primary/50" placeholder="۰" type="number"/>
+</div>
+<button class="w-full md:w-auto h-11 px-6 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined">add</span>
+<span>افزودن</span>
+</button>
+</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-green-500">check_circle</span>
+<p class="text-xs text-[#617589] dark:text-gray-400">موجودی در دسترس مبدأ: <span class="font-bold text-[#111418] dark:text-white">۱۴۲ عدد</span></p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1A2633] rounded-xl shadow-sm border border-[#f0f2f4] dark:border-gray-800 overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-[#f9fafb] dark:bg-gray-800/50 border-b border-[#f0f2f4] dark:border-gray-800">
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wide text-[#617589] dark:text-gray-400 w-16">#</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wide text-[#617589] dark:text-gray-400">مشخصات محصول</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wide text-[#617589] dark:text-gray-400 w-32 text-center">موجودی (مبدأ)</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wide text-[#617589] dark:text-gray-400 w-32 text-center">تعداد انتقال</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wide text-[#617589] dark:text-gray-400 w-24">واحد</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wide text-[#617589] dark:text-gray-400 w-24 text-left">عملیات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f0f2f4] dark:divide-gray-800">
+<tr class="group hover:bg-[#f0f2f4]/50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="py-4 px-6 text-sm text-[#617589] dark:text-gray-500">۱</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-[#f0f2f4] dark:bg-gray-700 bg-center bg-cover" data-alt="Laptop computer thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTO16JDQNRbW-zhVh93FL2x9zyOS5JFQQr9fFoJwhr6Fusv7Uj4zvIHo4BP3DQ4-LpyI6qG8cE7J_Zr0F2frqLTFNPTkrGvW9-3mcXg_m_6EjeKT-xHci4b8FMR5XwJT-UzcfVCQKyshAWUJTk4rhqgfpHrv7QEuu10O_hCtQoL7jltBal36LD83-sXoD2_l83xrJczIYHdlsAuIBG3CLqEIy-ecFeat6_c59oOoPMxJWpgSH1M9xY4kR9D4M1sUc6GkQxS4IQMG0F");'></div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white">مک‌بوک پرو M2 ۱۴ اینچ</p>
+<p class="text-xs text-[#617589] dark:text-gray-400 font-mono" dir="ltr">SKU: MB-PRO-M2-14-SLV</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-center text-sm text-[#111418] dark:text-gray-300">۴۵</td>
+<td class="py-4 px-6">
+<input class="w-full text-center h-8 rounded border border-[#e5e7eb] dark:border-gray-600 bg-white dark:bg-gray-900 text-sm focus:ring-1 focus:ring-primary" type="number" value="5"/>
+</td>
+<td class="py-4 px-6 text-sm text-[#617589] dark:text-gray-400">عدد</td>
+<td class="py-4 px-6 text-left">
+<button class="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-[#f0f2f4]/50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="py-4 px-6 text-sm text-[#617589] dark:text-gray-500">۲</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-[#f0f2f4] dark:bg-gray-700 bg-center bg-cover" data-alt="Modern office chair thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxrL6QpC-Nx9wx6OMEMQHmhtvHIWYHpqYHvothLd2hcXqhkauUjINumzQcvUI5zb8OOyjpAnj7vTuTOYUsW_cdojcDg1Qj_LnMxZYSHX9XElKCBL_gKTJf_1_HVQI4qPPTwBFYz67uxk1-baytJ4BorQeJ3Bazkl2ZPWcPTWNpFS7GTbs8UCgWP2J-11HN8JjbbpaRTSS9NVhmpL0LI_j8kPFb7ixYyIDi9aFDlj9ScPkf-L4SkCJUsWlO1vae1hSgKoo0doaouCBU");'></div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white">صندلی ارگونومیک پرو</p>
+<p class="text-xs text-[#617589] dark:text-gray-400 font-mono" dir="ltr">SKU: FURN-CHR-002</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-center text-sm text-[#111418] dark:text-gray-300">۱۲</td>
+<td class="py-4 px-6">
+<input class="w-full text-center h-8 rounded border border-[#e5e7eb] dark:border-gray-600 bg-white dark:bg-gray-900 text-sm focus:ring-1 focus:ring-primary" type="number" value="2"/>
+</td>
+<td class="py-4 px-6 text-sm text-[#617589] dark:text-gray-400">عدد</td>
+<td class="py-4 px-6 text-left">
+<button class="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-[#f9fafb] dark:bg-gray-800/50 p-4 border-t border-[#f0f2f4] dark:border-gray-800 flex justify-between items-center">
+<p class="text-sm font-medium text-[#617589] dark:text-gray-400">تعداد اقلام: <span class="text-[#111418] dark:text-white font-bold">۲</span></p>
+<div class="text-left">
+<p class="text-xs text-[#617589] dark:text-gray-500">ارزش تقریبی</p>
+<p class="text-lg font-bold text-[#111418] dark:text-white" dir="ltr">$12,450.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 right-0 lg:right-64 left-0 p-4 bg-white dark:bg-[#1A2633] border-t border-[#f0f2f4] dark:border-gray-800 flex justify-between items-center z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<button class="px-6 h-10 rounded-lg text-sm font-bold text-[#617589] hover:bg-[#f0f2f4] dark:text-gray-400 dark:hover:bg-gray-700 transition-colors">
+                        انصراف
+                    </button>
+<div class="flex gap-4">
+<button class="px-6 h-10 rounded-lg text-sm font-bold border border-[#f0f2f4] dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 text-[#111418] dark:text-white transition-colors">
+                            ذخیره پیش‌نویس
+                        </button>
+<button class="px-6 h-10 rounded-lg text-sm font-bold bg-primary hover:bg-blue-600 text-white shadow-lg shadow-blue-500/25 transition-colors flex items-center gap-2">
+<span>ثبت نهایی انتقال</span>
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+</button>
+</div>
+</div>
+<div class="h-16"></div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>درخت هلو - ایجاد انتقال بین شعبه‌ای</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec5b",
+              "primary-hover": "#0fb847",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              "surface-dark": "#162e1f",
+              "border-dark": "#23482f",
+              "text-secondary": "#92c9a4",
+            },
+            fontFamily: {
+              "display": ['"Noto Sans Arabic"', "Inter", "sans-serif"],
+              "body": ['"Noto Sans Arabic"', "Inter", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #102216; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #23482f; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #326744; 
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white h-screen flex overflow-hidden selection:bg-primary selection:text-black">
+<!-- Right Sidebar -->
+<aside class="w-72 bg-[#112217] border-l border-border-dark flex flex-col shrink-0 transition-all duration-300">
+<!-- Logo Area -->
+<div class="p-6 flex items-center gap-4 border-b border-border-dark/50">
+<div class="bg-gradient-to-br from-green-400 to-green-700 aspect-square rounded-xl size-12 flex items-center justify-center shadow-lg shadow-green-900/20" data-alt="Peach tree abstract logo">
+<span class="material-symbols-outlined text-white" style="font-size: 32px;">nature</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-tight tracking-tight">درخت هلو</h1>
+<p class="text-text-secondary text-xs font-normal mt-1">برنامه مدیریت شعب هلو</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white hover:bg-surface-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-white transition-colors">dashboard</span>
+<span class="text-sm font-medium">داشبورد</span>
+</a>
+<!-- Warehouse (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined icon-filled">warehouse</span>
+<span class="text-sm font-bold">انبار</span>
+</a>
+<!-- Sales -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white hover:bg-surface-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-white transition-colors">shopping_bag</span>
+<span class="text-sm font-medium">فروش</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white hover:bg-surface-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-white transition-colors">bar_chart</span>
+<span class="text-sm font-medium">گزارشات</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white hover:bg-surface-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-white transition-colors">settings</span>
+<span class="text-sm font-medium">تنظیمات</span>
+</a>
+</nav>
+<!-- User Profile (Bottom) -->
+<div class="p-4 border-t border-border-dark/50">
+<div class="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-surface-dark cursor-pointer transition-colors">
+<div class="size-10 rounded-full bg-cover bg-center border border-border-dark" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGG3YAyzplRUfKZR6G_PJDcpjyy512OQL_HSU07BGhJX3leKDlb4NbAZIv4w_AohsNPv0RACDV7VoMO5CVOVgn-SWbjpFfioeyghNfqZs9wb7lq4yhCMH54fqa3gLAOaLIUVQXOWd5tSAcCioNHGoHaEONQSo1Non9U5qS5YZU8g3BX7EFEMb5qM3rbhOvBnpiAk5zvttJo9ASVeDZuif9oSQL_aMAqnSTV4Gz0okLDgLdhtkSR2tlRSquMo-ch7MKihklD2gYzA');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">علی محمدی</span>
+<span class="text-xs text-text-secondary">مدیر انبار</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 bg-background-dark relative">
+<!-- Top Navigation Bar -->
+<header class="h-20 border-b border-border-dark bg-[#112217]/80 backdrop-blur-md sticky top-0 z-30 flex items-center justify-between px-8">
+<!-- Search Bar -->
+<div class="flex-1 max-w-lg">
+<div class="relative group">
+<div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+<span class="material-symbols-outlined text-text-secondary group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="w-full h-12 bg-surface-dark border border-border-dark text-white text-sm rounded-xl pr-12 pl-4 focus:ring-1 focus:ring-primary focus:border-primary placeholder-text-secondary/70 transition-all outline-none" placeholder="جستجو در انبار، کالاها، شماره سند..." type="text"/>
+</div>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-3 mr-4">
+<!-- Help -->
+<button class="size-10 flex items-center justify-center rounded-xl bg-surface-dark border border-border-dark text-text-secondary hover:text-white hover:border-primary/50 transition-all" title="راهنما">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<!-- Theme Toggle -->
+<button class="size-10 flex items-center justify-center rounded-xl bg-surface-dark border border-border-dark text-text-secondary hover:text-white hover:border-primary/50 transition-all" title="تغییر ظاهر">
+<span class="material-symbols-outlined text-[20px]">light_mode</span>
+</button>
+<!-- Notifications -->
+<button class="size-10 flex items-center justify-center rounded-xl bg-surface-dark border border-border-dark text-text-secondary hover:text-white hover:border-primary/50 transition-all relative" title="اعلان‌ها">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 left-2 size-2 bg-primary rounded-full animate-pulse"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 pb-32">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm">
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">خانه</a>
+<span class="text-text-secondary">/</span>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">انبار</a>
+<span class="text-text-secondary">/</span>
+<span class="text-white font-medium">انتقال بین شعبه‌ای</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div class="space-y-1">
+<h2 class="text-3xl font-bold text-white tracking-tight">ایجاد انتقال بین شعبه‌ای</h2>
+<div class="flex items-center gap-2">
+<span class="text-text-secondary text-sm">شماره درخواست:</span>
+<span class="font-mono text-primary bg-primary/10 px-2 py-0.5 rounded text-sm font-medium">TR-1403-882</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm text-text-secondary">تاریخ ثبت:</span>
+<span class="text-white font-medium">۱۴۰۳/۰۸/۲۴</span>
+</div>
+</div>
+<!-- Main Form Card -->
+<div class="bg-surface-dark border border-border-dark rounded-2xl p-6 shadow-xl shadow-black/20">
+<!-- Route Selection -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-8 relative">
+<!-- Source -->
+<div class="lg:col-span-5 space-y-2">
+<label class="text-sm font-medium text-text-secondary">شعبه مبدا</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary">storefront</span>
+<select class="w-full h-14 bg-[#112217] border border-border-dark rounded-xl text-white text-base pr-12 pl-4 focus:ring-1 focus:ring-primary focus:border-primary appearance-none outline-none">
+<option disabled="" selected="" value="">انتخاب شعبه...</option>
+<option value="1">شعبه مرکزی (تهران)</option>
+<option value="2">شعبه غرب</option>
+</select>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Direction Indicator -->
+<div class="lg:col-span-2 flex justify-center pb-4">
+<div class="size-10 rounded-full bg-border-dark/50 flex items-center justify-center text-text-secondary rotate-180 lg:rotate-0">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+</div>
+<!-- Destination -->
+<div class="lg:col-span-5 space-y-2">
+<label class="text-sm font-medium text-text-secondary">شعبه مقصد</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary">store</span>
+<select class="w-full h-14 bg-[#112217] border border-border-dark rounded-xl text-white text-base pr-12 pl-4 focus:ring-1 focus:ring-primary focus:border-primary appearance-none outline-none">
+<option disabled="" selected="" value="">انتخاب شعبه...</option>
+<option value="3">شعبه شرق (تهرانپارس)</option>
+<option value="4">شعبه کرج</option>
+</select>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="border-t border-border-dark my-8"></div>
+<!-- Items Table Header -->
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+                            لیست اقلام انتقال
+                        </h3>
+<button class="text-xs font-medium text-primary hover:text-white transition-colors bg-primary/10 hover:bg-primary/20 px-3 py-1.5 rounded-lg border border-primary/20">
+                            بارگذاری از اکسل
+                        </button>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto rounded-xl border border-border-dark bg-[#112217]">
+<table class="w-full text-right">
+<thead class="bg-surface-dark text-text-secondary text-xs uppercase font-semibold">
+<tr>
+<th class="px-4 py-4 w-16">#</th>
+<th class="px-4 py-4 min-w-[200px]">نام کالا / کد</th>
+<th class="px-4 py-4 w-32 text-center">موجودی مبدا</th>
+<th class="px-4 py-4 w-40">تعداد انتقال</th>
+<th class="px-4 py-4 w-24">واحد</th>
+<th class="px-4 py-4 min-w-[200px]">توضیحات سطر</th>
+<th class="px-4 py-4 w-16"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-dark/50 transition-colors">
+<td class="px-4 py-3 text-text-secondary font-mono text-center">1</td>
+<td class="px-4 py-3">
+<div class="relative">
+<input class="w-full bg-transparent border-none text-white focus:ring-0 p-0 placeholder-text-secondary/50 font-medium" placeholder="جستجوی کالا..." type="text" value="هلو انجیری درجه یک (P-102)"/>
+</div>
+</td>
+<td class="px-4 py-3 text-center">
+<span class="inline-flex items-center px-2 py-1 rounded bg-green-900/30 text-green-400 text-xs font-mono">1,250</span>
+</td>
+<td class="px-4 py-3">
+<input class="w-full h-10 bg-[#0c1810] border border-border-dark rounded-lg text-white text-center focus:ring-1 focus:ring-primary focus:border-primary" type="number" value="200"/>
+</td>
+<td class="px-4 py-3 text-text-secondary text-sm">کیلوگرم</td>
+<td class="px-4 py-3">
+<input class="w-full bg-transparent border-b border-transparent focus:border-primary text-sm text-white focus:ring-0 p-1 placeholder-text-secondary/30 transition-all" placeholder="یادداشت..." type="text"/>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="text-red-400 hover:text-red-300 opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-red-400/10 rounded">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-dark/50 transition-colors">
+<td class="px-4 py-3 text-text-secondary font-mono text-center">2</td>
+<td class="px-4 py-3">
+<div class="relative">
+<input class="w-full bg-transparent border-none text-white focus:ring-0 p-0 placeholder-text-secondary/50 font-medium" placeholder="جستجوی کالا..." type="text" value="جعبه کارتنی 10 کیلویی"/>
+</div>
+</td>
+<td class="px-4 py-3 text-center">
+<span class="inline-flex items-center px-2 py-1 rounded bg-green-900/30 text-green-400 text-xs font-mono">500</span>
+</td>
+<td class="px-4 py-3">
+<input class="w-full h-10 bg-[#0c1810] border border-border-dark rounded-lg text-white text-center focus:ring-1 focus:ring-primary focus:border-primary" type="number" value="20"/>
+</td>
+<td class="px-4 py-3 text-text-secondary text-sm">عدد</td>
+<td class="px-4 py-3">
+<input class="w-full bg-transparent border-b border-transparent focus:border-primary text-sm text-white focus:ring-0 p-1 placeholder-text-secondary/30 transition-all" placeholder="یادداشت..." type="text" value="جهت بسته بندی"/>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="text-red-400 hover:text-red-300 opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-red-400/10 rounded">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Empty Row Input -->
+<tr class="group hover:bg-surface-dark/50 transition-colors bg-primary/5 border-l-2 border-l-primary">
+<td class="px-4 py-3 text-primary font-mono text-center">+</td>
+<td class="px-4 py-3">
+<div class="relative">
+<input autofocus="" class="w-full bg-transparent border-none text-white focus:ring-0 p-0 placeholder-text-secondary/50" placeholder="افزودن کالای جدید..." type="text"/>
+</div>
+</td>
+<td class="px-4 py-3 text-center text-text-secondary text-xs">-</td>
+<td class="px-4 py-3">
+<input class="w-full h-10 bg-transparent border border-dashed border-border-dark rounded-lg text-text-secondary text-center cursor-not-allowed" disabled="" type="number"/>
+</td>
+<td class="px-4 py-3"></td>
+<td class="px-4 py-3"></td>
+<td class="px-4 py-3"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Actions -->
+<div class="mt-4 flex justify-between items-center">
+<button class="flex items-center gap-2 text-primary hover:text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                            افزودن سطر جدید
+                        </button>
+<div class="text-sm text-text-secondary">
+                            تعداد اقلام: <span class="text-white font-mono">2</span>
+</div>
+</div>
+<div class="border-t border-border-dark my-8"></div>
+<!-- Notes Section -->
+<div class="space-y-2">
+<label class="text-sm font-medium text-text-secondary">توضیحات تکمیلی انتقال</label>
+<textarea class="w-full h-32 bg-[#112217] border border-border-dark rounded-xl text-white text-sm p-4 focus:ring-1 focus:ring-primary focus:border-primary placeholder-text-secondary/50 resize-none outline-none" placeholder="یادداشت‌های مربوط به این انتقال را اینجا بنویسید... (اختیاری)"></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action Bar -->
+<div class="h-20 bg-surface-dark border-t border-border-dark flex items-center justify-between px-8 absolute bottom-0 w-full z-20">
+<button class="px-6 py-2.5 rounded-xl border border-border-dark text-text-secondary hover:text-white hover:bg-white/5 hover:border-white/20 font-medium text-sm transition-all flex items-center gap-2">
+                انصراف
+            </button>
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] text-text-secondary uppercase tracking-wider">جمع کل تعداد</p>
+<p class="text-lg font-bold text-white font-mono">220</p>
+</div>
+<div class="h-8 w-px bg-border-dark mx-2 hidden sm:block"></div>
+<button class="px-8 py-3 rounded-xl bg-primary hover:bg-primary-hover text-background-dark font-bold text-base shadow-lg shadow-primary/20 transition-all flex items-center gap-2 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">check_circle</span>
+                    پیش‌نمایش و ثبت نهایی
+                </button>
+</div>
+</div>
+</main>
+</body></html>
